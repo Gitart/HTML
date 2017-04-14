@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	    <title>Shop List</title>
+	    
+	    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<meta http-equiv="Content-Language" content="Ru-ru">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+        <style type="text/css">
+        	
+                 /*Table for head page*/
+        	    .tablehead td           {padding:1px;}
+				.tablehead td input     {width:100%; border-radius:2px; background-color:#FFF; border: 1px #CCC solid; padding-left: 12px; font-weight:bold;}
+
+                /*Table base*/
+        	    .tablemain td           {padding:1px;}
+				.tablemain td input     {width:100px; border-radius:2px; background-color:#FFF; border: 1px #CCC solid; padding-left: 12px; font-weight:bold;}
+                 
+                .inplong                {width: 400px;}
+
+                /*.greenlith {color: #3ADF00!important;}*/
+                .navbar-brand{color: #BDBDBD!important;font-weight: bold;font-size: 25px;}
+
+                /* Переопределение загловка в блоках */
+				.panel-title {color: #B43104; font-weight: bold;}
+
+				/*Color for head brand - #086A87*/
+				.color-head {color: #6E6E6E; font-size: 30px; font-weight: bold; padding-left: 15px;}
+
+                /*Button menu */
+				#liclass li a           {display:    block;   font-weight: bold;  transition: width 3s;} 
+                #liclass li a:hover     {color : #676768; }
+                
+                /*Cursor in table journal handel*/
+                #journalsl tr{cursor:pointer;}               
+
+                .clmoney {color: #086A87; font-weight: bold;text-align: right;}
+                .headcololr{color:#2E64FE; font-weight: bold;}
+
+        </style>
+
+
+
+        <!-- Scripts -->
+        <script type="text/javascript">
+
+           // Hidden base blocks
+        	function Blockd(){
+                    // $("#Block1").hide();
+                    // $("#Block2").hide();
+                    // $("#Block3").hide();
+                    $("#Block4").hide();
+                    $("#Block5").hide();
+                    $("#Block6").hide();
+                    $("#Block7").hide();
+                    $("#Block8").hide();
+        	}
+
+            // Show base blocks
+            function Blocke(){
+                    $("#Block1").show(200);
+                    $("#Block2").show(200);
+                    $("#Block3").show(200);
+                    $("#Block4").show(200);
+                    $("#Block5").show(200);
+                    $("#Block6").show(200);
+                    $("#Block7").show(200);
+                    $("#Block8").show(200);
+        	}
+           
+
+            // Загрузка
+        	function Lodtexthead(){
+        	         $("#Hdp0").val("SL-00000023");	
+        	         $("#Hdp1").val("Агент 008");	
+        	         $("#Hdp2").val("Foxtrot");	
+        	         $("#Hdp3").val("02-03-2016");	
+        	         $("#Hdp4").val("Севсатьянов Олег");
+        	         $("#Hdp5").val("Терещенко Оксана");
+        	         $("#Hdp51").val("Иваненко Ольга");
+        	         $("#Hdp6").html("Лист знаходится на розгляді агентства");
+
+        	         $("#AInp1").val(100234.45);
+        	         $("#AInp2").val(100234.57);
+        	         $("#AInp3").val(500234.45);
+        	         $("#AInp4").val(1007.45);
+        	         $("#AInp5").val(4590.00);
+        	         $("#AInp6").val(3434678.45);
+        	         
+        	         $("#hd_p1").val(-10.00);
+                     $("#hd_p2").val(-15.00);
+                     $("#hd_p3").val(-15.00);
+                     $("#hd_p4").val(-15.00);
+                     $("#hd_p5").val(-10.00);
+        	         	
+        	         Blockd();
+        	}
+
+            // Redirect to shop list
+        	function clicredirect(idtext){
+                     window.location.href = 'sl_card.html?idsl='+idtext+'&mode=v';
+        	}
+
+
+        	function clicself(texthref){
+        		window.location.href = texthref;
+        		
+        	}
+
+        </script>
+</head>
+
+
+
+<body onload="Lodtexthead()">
+
+
+    <!--Navigation menu panel-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="#" >Brand  ® </a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Пакет</a></li>
+              <li><a href="#contact">Пакет плавання</a></li>
+              <li><a href="#contact">Загальні положення</a></li>
+              <li><a href="#contact">Контакти</a></li>
+              <li><a href="#contact">Довідники</a> </li>
+              <li><a href="#contact">Довідка</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <br><br><br>
+    
+    <!--Width full screen-->
+    <div class="container-fluid">
+       <form class="form-horizontal">
+		<div class="row1">
+         <!--General Informaton for documents
+            <div class="col-md-6 col-md-offset-3">
+         
+                    <h3 class="headcololr">
+                        <span class="glyphicon glyphicon-list-alt"></span>
+                        <b >Журнал реєстрації шоп лістів</b>
+                    </h3>
+           -->
+
+
+          <div class="col-md-12">
+		      <div class="panel panel-default">
+		               <div class="panel-heading"> 
+		                    <h3 class="panel-title">
+		                        <span class="glyphicon glyphicon-list-alt"></span>
+		                        <b >Журнал реєстрації шоп лістів</b>       
+		                    </h3> 
+		               </div>
+                    <div class="panel-body">
+                    
+
+
+                       <!--Sub Main Menu -->   
+						<div class="btn-group2" >
+
+						      <button type="button" class="btn btn-default" onclick="clicredirect('New')"><span class="glyphicon glyphicon-repeat">  </span> Новий</button>
+							  <button type="button" class="btn btn-default" onclick="clicself('sl_journal.html')"><span class="glyphicon glyphicon-repeat">  </span> Оновити</button>
+	                          <button type="button" class="btn btn-default" onclick="clicself('sl_dashboard.html')"><span class="glyphicon glyphicon-repeat">  </span> Дашборд</button>
+
+	                          <button type="button" class="btn btn-danger"><span  class="glyphicon glyphicon-trash">   </span> Видалити</button>
+
+	                          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove">  </span> Блокувати</button>
+	                          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-time">    </span> Звірка</button>
+	                          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-time">    </span> Фільтр</button>
+
+	                          <!-- Single button -->
+							  <div class="btn-group">
+								   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								           Звітність 								           <span class="caret"></span>
+								  </button>
+        
+
+								  <ul class="dropdown-menu">
+								    <li><a href="#">Звіт використання часу</a></li>
+								    <li><a href="#">Документи очикують Вашого розгляду</a></li>
+								    <li><a href="#">Не відправленні на затвердження документи</a></li>
+								    <li role="separator" class="divider"></li>
+								    <li><a href="#">Журнал </a></li>
+								    <li><a href="#">Лог дій </a></li>
+								  </ul>
+								</div>
+
+
+                                 <div class="btn-group">
+								   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								           Экспорт 								           <span class="caret"></span>
+								  </button>
+        
+
+								  <ul class="dropdown-menu">
+								    <li><a href="#">XLS</a></li>
+								    <li><a href="#">JSON</a></li>
+								    <li><a href="#">TXT</a></li>
+								    
+								  </ul>
+								</div>
+
+
+								<button type="button" class="btn btn-default" onclick="clicself('sl_instruction.html')"><span class="glyphicon glyphicon-info-sign">  </span> Довідка</button>
+  	                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-time">    </span> Вихід</button>
+						</div> 
+                        <br>
+
+
+                        <!--Journal-->
+		                <table id="journalsl" class="table table-bordered111 table-hover table-striped">
+	                         
+	                         <tr class="active">  
+	                             <th width="50px" style="text-align: center;"><input type="checkbox"></th>     
+	                             <th width="50px"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></th>     
+	                             <th width="100px">№ Шл</th>     
+	                             <th>Агентство </th>  
+	                             <th>Рекламодавець</th>  
+	                             <th>Замовник</th>    
+	                             <th>Дата пропозиції</th> 
+	                             <th>Період з</th> 
+	                             <th>Період по</th> 
+	                             <th width="200px">Загальний Бюджет грн*</th>    
+	                             <th width="200px"> Статус </th>
+	                             <th>Примітка</th>
+
+	                         </tr>     
+	                        
+                             <tr ondblclick="clicredirect('SL-104567')" class="success">  
+                                  <th width="50px"><input type="checkbox"></th> 
+                                  <th><a href ="sl_card.html?id=10456" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></th>
+	                              <th>SL-104567</th>  
+	                              <td> Агентство ITL </td>  
+	                              <td> Google </td>    
+	                              <td> 09-04-2017 </td>    
+	                              <td> 22-02-2017 </td>    
+	                              <td> 23-02-2017 </td>    
+	                              <td> 26-03-2018 </td>
+	                              <td class="clmoney">2 000 000.09</b> </td>
+	                              <td> <span class="label label-default">Узгоджено</span> </td>
+	                              <td> Перевірити данні </td>
+	                         </tr>     
+
+	                         <tr ondblclick="clicredirect('SL-10004')">  
+	                              <th width="50px"><input type="checkbox"></th> 
+	                              <th><a href ="sl_card.html?id=10004" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></th>
+	                              <th>SL-10004</th>  
+	                              <td> Агентство ITL </td>  
+	                              <td> Unisoft </td>    
+	                              <td> 20-02-2017 </td>    
+	                              <td> 01-02-2016 </td>
+	                              <td> 23-02-2017 </td>    
+	                              <td> 26-03-2018 </td>
+	                              <td class="clmoney"> 100 347.09</b> </td>
+	                              <td> <span class="label label-default">Затверджено агентством</span> </td>
+	                              <td> Перевірити данні </td>
+	                         </tr>
+
+	                         <tr ondblclick="clicredirect('SL-10454')">  
+	                              <th width="50px"><input type="checkbox"></th> 
+	                              <th><a href ="sl_card.html?id=10456" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></th>
+	                              <th>SL-10454</th>  
+	                              <td> Агентство Smile </td>  
+	                              <td> Foxtrot </td>    
+	                              <td> 20-02-2017 </td>    
+	                              <td> 12-03-2017 </td>
+	                              <td> 23-02-2017 </td>    
+	                              <td> 26-03-2018 </td>
+	                              <td class="clmoney">2 223 234.00 </td>
+	                              <td> <span class="label label-danger">Відхилено</span> </td>
+	                              <td> Перевірити данні </td>
+	                         </tr> 
+
+	                         <tr ondblclick="clicredirect('SL-10456')">  
+	                         	  <th ><input type="checkbox"></th> 
+	                         	  <th><a href ="sl_card.html?id=10456" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></th>
+	                              <th>SL-10456</th>  
+	                              <td> Агентство ITL </td>  
+	                              <td> Foxtrot </td>    
+	                              <td> 20-02-2017 </td>    
+	                              <td> 02-03-2017 </td>
+	                              <td> 23-02-2017 </td>    
+	                              <td> 26-03-2018 </td>
+	                              <td class="clmoney"> 1 468 200.09 </td>
+	                              <td> <span class="label label-default">Узгоджено</span> </td>
+	                              <td> Перевірити данні </td>
+	                         </tr>
+
+	                         <tr  ondblclick="clicredirect('SL-10456')" > 
+	                         	  <th ><input type="checkbox"></th> 
+	                         	  <th><a href ="sl_card.html?id=10456" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></th> 
+	                              <th>SL-10457</th>  
+	                              <td> Lotus </td>  
+	                              <td> Foxtrot </td>    
+	                              <td> 20-02-2017 </td>    
+	                              <td> 02-04-2016 </td>
+	                              <td> 23-02-2017 </td>    
+	                              <td> 26-03-2018 </td>
+	                              <td class="clmoney">456 000.09 </td>
+	                              <td> <span class="label label-success">Узгоджено</span> </td>
+	                              <td> No Correct Data  </td>
+	                         </tr>  
+
+	                          <tr ondblclick="clicredirect('SL-104567')" class="success2">  
+                                  <th width="50px"><input type="checkbox"></th> 
+                                  <th><a href ="sl_card.html?id=10456" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></th>
+	                              <th>SL-104567</th>  
+	                              <td> Агентство ITL </td>  
+	                              <td> Google </td>    
+	                              <td> 09-04-2017 </td>    
+	                              <td> 22-02-2017 </td>    
+	                              <td> 23-02-2017 </td>    
+	                              <td> 26-03-2018 </td>
+	                              <td class="clmoney">2 000 000.09</b> </td>
+	                              <td> <span class="label label-default">Узгоджено</span> </td>
+	                              <td> Перевірити данні </td>
+	                         </tr>     
+
+                             <tr  ondblclick="clicredirect('SL-10456')"> 
+	                         	  <th ><input type="checkbox"></th> 
+	                         	  <th><a href ="sl_card.html?id=10456" ><span class="glyphicon glyphicon-cog" aria-hidden="true"></span></a></th> 
+	                              <th>SL-10457</th>  
+	                              <td> Lotus </td>  
+	                              <td> Foxtrot </td>    
+	                              <td> 20-02-2017 </td>    
+	                              <td> 02-04-2016 </td>
+	                              <td> 23-02-2017 </td>    
+	                              <td> 26-03-2018 </td>
+	                              <td class="clmoney">456 000.09 </td>
+	                              <td> <span class="label label-success">Узгоджено</span> </td>
+	                              <td> Перевірити данні </td>
+	                         </tr>  
+
+
+                        </table>
+                        </div>
+                </div>
+		  </div>
+         
+		  </div>
+       </div>
+</form>
+
+
+
+
+<div id="reports">
+
+</div>
+
+<div class="col-md-12">
+     <div style="text-align: center;">
+          Copyright © 2017 The Brand  ® <br>
+          All rights reserved. <br>
+          Privacy Policy and Terms of Use 
+     </div>
+</div>
+
+
+
+
+    </div>
+
+</html>	
+		 
+		 
