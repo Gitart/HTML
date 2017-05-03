@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	    <title>Shop List</title>
+	    <meta   content="text/html; charset=UTF-8" http-equiv="content-type">
+	  	<meta   http-equiv="Content-Language" content="Ru-ru">
+  		<meta   name="viewport" content="width=device-width, initial-scale=1">
+	    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link   href='http://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet' type='text/css'>
+
+         <style type="text/css">
+            body {font-family: 'Fira Sans';font-size: 16px;}
+            .tablehead td           {padding:1px;}
+        	.tablehead td input     {width:100%; border-radius:2px; background-color:#FFF; border: 1px #CCC solid; padding-left: 12px; font-weight:bold;}
+            .tablemain td           {padding:1px;}
+      	   	.tablemain td input     {width:100px; border-radius:2px; background-color:#FFF; border: 1px #CCC solid; padding-left: 12px; font-weight:bold;}
+            .inplong                {width: 400px;}
+            .navbar-brand           {color: #BDBDBD!important;font-weight: bold;font-size: 25px;}
+      		.panel-title            {color: #B43104; font-weight: bold;}
+      		.color-head             {color: #6E6E6E; font-size: 30px; font-weight: bold; padding-left: 15px;}
+        	#liclass li a           {display:    block;   font-weight: bold;  transition: width 3s;} 
+            #liclass li a:hover     {color : #676768; }
+            a                       {font-weight: bold;}
+            h3                      {color : #0080FF; }
+            .money                  {font-weight: bold; color:#B53939;}  
+            .navbar-brand           {color: #7FFF00 !important;}  
+            .form-group             {margin-bottom: 5px;}
+            .panel-body input       {width: 400px;}
+            .container              {width: 900px;}
+            .hdtext                 {color:grey;}
+            #tableform td input, #tableform td textarea  {width:100%; border-radius:1px; background-color:#FAFAFC; border: 0px #CCC solid; padding: 4px; font-weight:bold;}
+            #tableform td input:hover {color:red;}
+            #panelwindow              {box-shadow: 0 0 10px rgba(0,0,0,0.5);}
+
+         </style>
+</head>
+
+
+
+<body>
+    <!--Navigation menu panel-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+          </button>
+
+        <!--StarLight Brand Content ® -->
+        <a class="navbar-brand" href="index.html" > MEDIAPLAN </a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="#target">Цель</a></li>
+              <li><a href="#Appointment">Назначение</a></li>
+              <li><a href="#techdescript">Требования</a></li>
+              <li><a href="#soft">Софт</a></li>
+              <li><a href="#participants">Участники</a></li>
+              <li><a href="#stage">Этапы</a> </li>
+              <li><a href="#real">План</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br><br><br>
+
+
+
+
+<!--Width full screen-->
+<div class="container">
+       
+         <br><br><br>
+             <div id="panelwindow" class="panel panel-default">
+		            <div class="panel-heading"> 
+		                <h3 class="panel-title"> <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>  Cведения об организации </h3>
+		            </div>
+
+                    <div class="panel-body">
+                        <form id="mainform"> 
+                              <button type="button" class="btn btn-default" onclick="shfield();"> <span class="glyphicon glyphicon-align-left"></span> </button>
+                              <button type="button" class="btn btn-default" onclick="hidfield();"> <span class="glyphicon glyphicon-trash"></span> </button>
+                              <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-trash"></span> </button>
+                              <br><br>
+
+						      <table id="tableform" class="table table-bordereds table-hovers table-condensed table-stripeds">
+								         <tbody>
+								                <tr id="P1" > <td class="hdtext" width="300px">Наименование организации </td> <td> <input id="organ"    type="text"> </td> </tr>
+								                <tr id="P2"> <td class="hdtext">Контактное лицо           </td> <td> <input id="contact"  type="text"> </td> </tr>
+								                <tr id="P3"> <td class="hdtext">Адрес                     </td> <td> <input id="adress"   type="text"> </td> </tr>
+								                <tr id="P4"> <td class="hdtext">Емаил                     </td> <td> <input id="email"    type="text"> </td> </tr>
+								                <tr id="P5"> <td class="hdtext">Телефон                   </td> <td> <input id="telphone" type="text"> </td> </tr>
+								                <tr id="P6"> <td class="hdtext">Сайт                      </td> <td> <input id="site"     type="text"> </td> </tr>
+								                <tr id="P7"> <td class="hdtext">Мобильный                 </td> <td> <input id="mobtel"   type="text"> </td> </tr>
+								                <tr id="P8"> <td class="hdtext">Описание                  </td> <td> <textarea  rows="3"></textarea> </td> </tr>
+								         </tbody>
+						      </table>
+				         </form>
+                    </div>
+
+
+      		       <!--Footer-->
+                       <div class="panel-footer text-right">
+<!-- 
+                            <button type="button" class="btn btn-info" aria-label="Left Align">    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> </button>
+                            <button type="button" class="btn btn-danger" aria-label="Left Align">  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span> </button>
+                            <button type="button" class="btn btn-default" aria-label="Left Align"> <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> </button>
+             --> 
+                            <button class="btn btn-default" type="submit">Домой</button>
+                            <button class="btn btn-warning" type="submit">Отказаться</button>
+                            <button class="btn btn-success" type="submit">Сохранить</button>
+                       </div>
+              </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+	
+	function hidfield(){
+         $("#P1").hide(50);
+         $("#P2").hide(50);
+         $("#P3").hide(50);
+	}
+
+	function shfield(){
+         $("#P1").show(150);
+         $("#P2").show(250);
+         $("#P3").show(300);
+	}
+
+
+
+</script>
+
+<script>
+      var sum=0;
+      $(".money").each(function() {
+
+            //add only if the value is number
+            if(!isNaN(this.innerHTML) && this.innerHTML!=0) {
+               sum += parseFloat(this.innerHTML);
+            }
+          });
+      $("#tabletotal").html(sum);
+</script>
+
+
+<hr>
+<!--footter-->
+<div class="col-md-12">
+     <div style="text-align: center;">
+          Copyright © 2017 The StarLight Brand Content ® <br>
+          All rights reserved. <br>
+      </div>
+</div>
+
+</div>
+</html>	
