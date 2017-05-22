@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+  <head>
+      <title>Медиаплан</title>
+	  <meta   name="viewport" content="width=device-width, initial-scale=1">
+      <meta   content="text/html; charset=UTF-8" http-equiv="content-type">
+	  <meta   http-equiv="Content-Language" content="Ru-ru">
+  	  <meta   name="viewport" content="width=device-width, initial-scale=1">
+	  <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <link   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link   href='http://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet' type='text/css'>
+      <style>
+						     .table-condensed>tbody>tr>td, 
+						     .table-condensed>tbody>tr>th, 
+						     .table-condensed>tfoot>tr>td, 
+						     .table-condensed>tfoot>tr>th, 
+						     .table-condensed>thead>tr>td, 
+						     .table-condensed>thead>tr>th {padding: 2px; font-size:14px; margin:2px; vertical-align:middle; padding-left: 10px;}
+	  </style>        
+
+
+	  <style>
+	             .containers{width:1200px; margin-left:50%; left:-500px; position:absolute;-webkit-box-shadow: -1px 5px 10px rgba(0,0,0,0.5);box-shadow: -1px 5px 10px rgba(0,0,0,0.5);}
+				 .control-label{font-weight:normal;color:#424242;}
+				 .art-control{font-weight:bold;}
+				 .art-control-head{font-weight:bold; color:#DF3A01;}
+				 .form-group{padding:0px; margin:5px;}
+				 
+	  </style>
+	  
+	  <script type="text/javascript">
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip({placement : 'bottom'});
+			});
+	   </script>
+	   
+	   <script>
+			function showoption(){
+			   $("#optionalinfo").toggle(1000);
+			}
+			
+			function notifyoptions(){
+			          $("#notifyoption").toggle(1000);
+			}
+			
+			function notifysave(){
+			var t=document.getElementById("Code");
+			 
+			if (isNaN(t.value)==true) {
+			    t.value="";
+				t.focus();
+			    alert("Не верный код. Код должен быть числовым.");
+			    return false;
+			}
+			     
+			}
+			
+			function fieldfill(){
+				var wtsname=$("#WTS option:selected" ).text();
+				$("#WTSNAME").val(wtsname);
+				
+				var tsname=$("#TS option:selected" ).text();
+				$("#TSNAME").val(tsname);
+		   }
+		   
+		   function retrive(){
+                  window.history.go(-1);
+		   }
+		
+		   function Corporations(){
+		       var pr="/api/system/corporation/view/";
+			   var ht=window.location.href.split("/")[7];
+			   ht=ht.split("*")[0];
+			   window.location.href = pr + ht; 
+		   }
+		   
+		   
+		   function loaddata(){
+		          $("#Area").val("Киевская").attr("selected", "selected");
+				  $("#TS").val("").attr("selected", "selected");
+				  $("#WTS").val("").attr("selected", "selected");
+		   }
+		  
+		   function Checkfield(){
+		           if ($("#WTS").val()=="" || $("#TS").val()==""){
+					   $("#noti").modal("show");
+				       return   
+				   }
+		   }
+	   </script>
+
+    <style type="text/css">.fancybox-margin{margin-right:0px;}
+</style>
+
+</head>
+<body onload="loaddata()" data-gclp-initialized="true" data-gistbox-initialized="true">
+    
+  	<div id="noti" style="display:none;" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+	    <div class="modal-dialog" role="document">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+				 	 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					 <h1 class="modal-title" id="exampleModalLabel">Внимание ! </h1>
+				</div>
+				
+                				
+				<div class="modal-body">
+					  <b>Обязательно заполните технического специалиста или ведущего технического специалиста.</b>
+					  <hr>Эти поля являются важными и основными для дальнейшей работы сервиса.					  
+				</div>
+                
+                
+				<div class="modal-footer">
+				     <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+				</div>
+			</div>
+        </div>
+	</div>
+	
+
+<div class="mb2">
+
+			
+			<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+				 <div class="container">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								   <span class="sr-only">Toggle navigation</span>
+								   <span class="icon-bar"></span>
+								   <span class="icon-bar"></span>
+								   <span class="icon-bar"></span>
+							</button>
+								   <a class="navbar-brand" href="#">MEDIAPLAN</a>
+						</div>
+						
+						
+						<div class="navbar-collapse collapse">
+						  
+							<ul class="nav navbar-nav">
+								  <li class="active"><a href="/done">Home</a></li>
+								  <li><a href="/aboute">About</a></li>
+								  <li><a href="/Contact">Contact</a></li>
+								
+								<li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Nav header</li>
+									<li><a href="#">Separated link</a></li>
+									<li><a href="#">One more separated link</a></li>
+								  </ul>
+								</li>
+							  
+							  <li class="dropdown">
+								  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Report<b class="caret"></b></a>
+								  <ul class="dropdown-menu">
+									<li><a href="#">Sales</a></li>
+									<li><a href="#">Operation</a></li>
+									<li><a href="#">View</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-header">Log Files</li>
+									<li><a href="#">More</a></li>
+									<li><a href="#">My Link</a></li>
+								  </ul>
+								</li>
+							</ul>
+							
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+								<li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+							</ul>
+						</div>
+						
+				</div>
+		</div>
+		<br>
+		<br>
+		<br>
+
+
+<div id="maincontainer" class="containers">
+
+     <div class="panel panel-default">
+  
+		  <div class="panel-heading" style="font-weight: bold; font-size: 18px;"> 
+				 <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Флоучарт
+		  </div>
+
+    
+        <div id="panelbody" class="panel-body">
+	         <form id="Frmmain" action="/create/" method="POST" class="form-horizontal" role="form">
+  
+
+	    <div class="form-group  input-group-sm">
+	         <label class="control-label col-sm-4" for="Fname"> Клиент</label> 
+			 
+			 <div class="col-sm-7">    
+			      <input required type="text" 
+			             class="form-control art-control" id="Client" name="Client" value="" 
+			             placeholder="Наименование клиента" data-toggle="tooltip" data-placement="right" 
+			             data-original-title="Наименование которое будет использоваться в справочниках. Наименование корпорации">
+			      </input>       
+			 </div>
+	    </div>
+	
+
+	
+		<div class="form-group">
+			 <label class="control-label col-sm-4" for="Position">Торговая марка</label>
+			 <div class="col-sm-3">
+		                  <select class="form-control art-control" name="Tm" id="Tm" onchange="fieldfill()" selected="selected">
+		                           <option value="">-- Выберите торговую марку --</option>
+								   <option value="t1">Bitburger Premium</option>   
+								   <option value="t2">Carling</option>   
+								   <option value="t3">Ciber</option>   
+								   <option value="t4">Magnat</option> 
+                                   <option value="t4">Zlata Praha</option> 
+                                   <option value="t4">БРЕНДІ кола</option> 
+                                   <option value="t4">Оболонская</option> 
+                                   <option value="t4">Рио де мохито алкогольные напитки</option> 
+	                      </select>
+			</div>	
+		</div>
+		
+
+
+
+
+		
+
+		<div class="form-group">
+			 <label class="control-label col-sm-4" for="Position">Категория</label>
+			 <div class="col-sm-3">
+		                  <select class="form-control art-control" name="Tm" id="Tm" onchange="fieldfill()" selected="selected">
+			                           <option value="">-- Выберите категорию --</option>
+									   <option value="t1"></option>   
+									   <option value="t2">Norm</option>   
+									   <option value="t3">Other</option>   
+									   <option value="t4">Example</option> 
+		                   </select>
+			</div>	
+
+			<div class="col-sm-3">  
+                 <button type="button" class="btn btn-default" onclick="notifyoptions()" title="Справка">
+                         <span class="glyphicon glyphicon-th" aria-hidden="true"></span> 
+                 </button>
+            </div>      	
+		</div>
+
+
+			<div id="optionalinfo">
+						
+						<div class="form-group">
+							 <label class="control-label col-sm-4" for="Position">Целевая аудитория</label>
+							 <div class="col-sm-3">
+									<select class="form-control art-control" name="Area" id="Area" selected="selected">
+											<option value="1855">14-29</option>
+											<option value="1855">14-30</option>
+											<option value="1855">14-40</option>
+											<option value="1855">14-45</option>
+											<option value="1855">14-49</option>
+											<option value="1855">18-45</option>
+											<option value="1855">18-54</option>
+											<option value="1855">20-45</option>
+											<option value="1855">25-55</option>
+											<option value="1855">7-30</option>
+											<option value="1855">Ж14-29</option>
+											<option value="1855">Ж14-45</option>
+											<option value="1855">Ж18-40</option>
+											<option value="1855">Ж18-45</option>
+											<option value="1855">Ж20-45</option>
+											<option value="1855">Ж25-50</option>
+											<option value="1855">Ж25-55</option>
+											<option value="1855">М14-29</option>
+											<option value="1855">М18-35ср+</option>
+											<option value="1855">М18-40</option>
+											<option value="1855">М18-45</option>
+											<option value="1855">М18-50</option>
+											<option value="1855">М20-45</option>
+											<option value="1855">М25-50</option>
+											<option value="1855">М25-55</option>
+
+									</select>
+							</div>	
+
+					       
+
+
+
+							 <div class="col-sm-3">  
+		                                   <button type="button" class="btn btn-default" onclick="notifyoptions()" title="Справка">
+		                                           <span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+		                                   </button>
+		                     </div>     
+
+							<!-- <div class="col-sm-4">
+							     <input type="Text" class="form-control" id="Address" name="Address" placeholder="Район" value="ул.Ленина, 38">  
+						   </div>		 -->		
+						</div>
+
+
+						 <div class="form-group">
+								 <label class="control-label col-sm-4" for="Position">Хронометраж (секунды)</label>
+								 <div class="col-sm-3">
+							                  <select class="form-control art-control" name="Tm" id="Tm" onchange="fieldfill()" selected="selected">
+								                           <option value="10">10</option>
+														   <option value="20">20</option>   
+														   <option value="30">30</option>   
+														   <option value="35">35</option>   
+														   <option value="40">40</option> 
+							                   </select>
+								</div>	
+
+								 <div class="col-sm-3">  
+		                                   <button type="button" class="btn btn-default" onclick="notifyoptions()" title="Предложить микс роликов и хронометраж">
+		                                           <span class="glyphicon glyphicon-time" aria-hidden="true"></span> 
+		                                   </button>
+		                         </div>     
+							</div>
+
+
+						
+						<div class="form-group">
+							 <label class="control-label col-sm-4" for="Mname">Бюджет</label>
+							 <div class="col-sm-3">  
+							      <input type="Text" class="form-control art-control" id="City" name="City" placeholder=" Бюджет" value="0.00">   
+							 </div>
+
+							 <div class="col-sm-3">  
+                                   <button type="button" class="btn btn-default" onclick="notifyoptions()" title="Справка">
+                                           <span class="glyphicon glyphicon-euro" aria-hidden="true"></span> 
+                                   </button>
+                             </div>      
+						</div>
+						
+
+						<div class="form-group">
+							 <label class="control-label col-sm-4" for="Mname">Доля Prime/Off </label>
+							 <div class="col-sm-1">  
+							      <input type="Text" class="form-control art-control" id="Prime" name="City" placeholder=" Бюджет" value="30">   
+							 </div>
+
+							 <div class="col-sm-1">  
+							      <input type="Text" class="form-control art-control" id="Off" name="City" placeholder=" Бюджет" value="70">   
+							 </div>
+							
+						</div>
+						
+
+						<div class="row">
+				             <label class="control-label col-xs-4" for="Position">Примечание</label>
+							<div class="col-xs-7">  
+							     <textarea row="7" class="form-control art-control" id="DESCRIPTION" name="DESCRIPTION" placeholder="Примечание." value=""></textarea>  
+							</div>
+						</div>
+
+					
+
+                         <div class="form-group" style="margin:12px; ">
+                              <h4>
+                                   <span class="glyphicon glyphicon-user" aria-hidden="true"></span> Объем рейтингов
+                              </H4>
+
+                              <table class="table table-bordered table-hover table-condensed table-striped">
+
+                                     <tr>
+                                     	  <th width="150px">Месяц</th> 
+                                     	  <th>Янв</th><th>Фев</th><th>Мар</th><th>Апр</th><th>Май</th><th>Июн</th><th>Июл</th><th>Авг</th><th>Сен</th><th>Окт</th><th>Ноя</th><th>Дек</th>
+                                     </tr>
+                              	
+                                     <tr>
+                                     	  <td>Объем TRP</td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-10" placeholder="0" name="A-10" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-11" placeholder="0" name="A-11" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-12" placeholder="0" name="A-12" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-13" placeholder="0" name="A-13" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-14" placeholder="0" name="A-14" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-15" placeholder="0" name="A-15" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-16" placeholder="0" name="A-16" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-17" placeholder="0" name="A-17" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-18" placeholder="0" name="A-18" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-19" placeholder="0" name="A-19" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-20" placeholder="0" name="A-20" value=""></td> 
+                                     	  <td> <input type="text" class="form-control art-control" style="text-align: center;" id="A-22" placeholder="0" name="A-22" value=""></td> 
+                                     </tr>
+
+
+                              </table>
+
+                              <button type="button" class="btn btn-default" onclick="showoption()" title="Скрыть - показать дополнительные данные в форме"> 
+  				                       <span class="glyphicon glyphicon-star" aria-hidden="true"></span>Сформировать график потребности</button>
+  				              </button>      
+			          </div>		
+			  </div>
+				
+			
+			<input type="hidden" id="Executor" name="Executor" value="">
+			<input type="hidden" id="Sess"     name="Sess" value="">
+	<br>
+
+	
+	<div class="panel-footer2" onmouseout="fieldfill()"> 
+			<div class="form-group pull-right" onmouseover="Checkfield()" style="font-weight: bold;">        
+				  <div class="col-sm-offset-0 col-sm-12">
+					   <button type="reset"  class="btn btn-default"> 
+					           <span class="glyphicon glyphicon-trash" aria-hidden="true" title="Обнулить данные формы."></span> Отказаться
+					   </button>
+
+  				       <button type="button" class="btn btn-default" onclick="showoption()" title="Скрыть - показать дополнительные данные в форме"> 
+  				               <span class="glyphicon glyphicon-star" aria-hidden="true"></span>Дополнительно</button>
+  				       </button>        
+
+					   <button type="button" class="btn btn-default" onclick="notifyoptions()" title="Справка">
+					           <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Сформировать медиаплан
+					   </button>
+				  </div>
+			</div>
+	</div>
+  </form>
+  
+    
+  	<div id="notifyoption" class="panel panel-default" style="display:none;">
+	     <div class="panel-heading">Внимание...</div>
+		 <div class="panel-body">
+		 	  <p>* Обязательные поля к заполнению обозначены звездочкой.</p>
+		 </div>
+	</div>
+	
+	<div id="notifyalert" class="alert alert-success" role="alert" style="display:none;"> 
+	     <a href="" class="alert-link">Данные сохранились.</a>
+	</div>
+	
+	
+	<div id="notifyalertfield" class="alert-dismissible" role="alert" style="display:none;"> 
+	     <a href="" class="alert-link">Обязательные поля не заполненны..</a>
+	</div>
+	
+
+
+</div>
+</div>
+</div>
+		<!-- <footer>
+		  <div>
+			<p>© 2017 StarLight.
+			<a href="" title="Creative Commons Attribution">Some rights reserved</a>;
+				  please attribute properly and link back. Hosted by 
+			<a href="http://starrlight.com/">© StarLight</a>.
+			</p>
+		  </div>
+		</footer>
+ -->
+         <form id="gclp-frame-form" target="gclp-frame" method="post" style="display: none;"></form>
+</body>
+</html>
