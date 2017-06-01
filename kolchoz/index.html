@@ -1,0 +1,558 @@
+<!doctype html>
+<html>
+<head>
+<title>Shop List</title>
+	    <meta   content="text/html; charset=UTF-8" http-equiv="content-type">
+	  	<meta   http-equiv="Content-Language" content="Ru-ru">
+  		<meta   name="viewport" content="width=device-width, initial-scale=1">
+	    <link   rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <link   rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link   href='http://fonts.googleapis.com/css?family=Fira Sans' rel='stylesheet' type='text/css'>
+        
+        <link   href='https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+        <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript">
+        	$(document).ready(function() {
+            $('#Production').DataTable( {
+                      "scrollY":        "600px",
+                      "scrollCollapse": true,
+                      "paging":         true,
+                      "iDisplayLength": 25,
+
+                      "language": {
+                                     "lengthMenu":   "Записей : _MENU_",
+                                     "zeroRecords":  "Ничего не найдено",
+                                     "info":         "Страниц _PAGE_ из _PAGES_",
+                                     "infoEmpty":    "Нет данных ",
+                                     "infoFiltered": "(Отфильтрованно _MAX_ всего записей)",
+                                     "search":       "Поиск"
+                           }
+                                      } );
+               } );
+
+        </script>
+
+         <style type="text/css">
+            body {font-family: 'Fira Sans';font-size: 16px;}
+            .tablehead td           {padding:1px;}
+        	.tablehead td input     {width:100%; border-radius:2px; background-color:#FFF; border: 1px #CCC solid; padding-left: 12px; font-weight:bold;}
+            .tablemain td           {padding:1px;}
+      	   	.tablemain td input     {width:100px; border-radius:2px; background-color:#FFF; border: 1px #CCC solid; padding-left: 12px; font-weight:bold;}
+            .inplong                {width: 400px;}
+            .navbar-brand           {color: #BDBDBD!important;font-weight: bold;font-size: 25px;}
+      		.panel-title            {color: #B43104; font-weight: bold;}
+      		.color-head             {color: #6E6E6E; font-size: 30px; font-weight: bold; padding-left: 15px;}
+        	#liclass li a           {display:    block;   font-weight: bold;  transition: width 3s;} 
+            #liclass li a:hover     {color : #676768; }
+            a                       {font-weight: bold;}
+            h3                      {color : #0080FF; }
+            .money                  {font-weight: bold; color:#B53939;}  
+            .navbar-brand           {color: #7FFF00 !important;}  
+     		/*.container              {width: 90%; background-color: #FАА; boxs-shadow: 1px -2px 5px #CCC; border: 1px #ccc; margin-top:20px; }*/
+     		table.table td:nth-child(1) {text-align: center; font-weight: bold;}
+     		table.table td:nth-child(2) {font-weight: bold; color: #2471A3;}
+     		table.table td:nth-child(4) {text-align: right; font-weight: bold;}
+
+     		.infohead2 { background-color: #f9f9f9; padding: 10px; margin-bottom: 5px; border: 1px solid #ccc; border-radius: 2px; margin-top: 5px; }
+     		.infofoot  { background-color: #f9f9f9; text-align: center; font-size: 12px; padding: 10px;}
+     		.infosub   { font-size: 14px; color: ##AEA7A2; margin-left: 30px; font-weight: bold;colors: #33CF71;}
+	</style>
+</head>
+
+<body>
+
+
+    <!--Navigation menu panel-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container" >
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+          </button>
+
+         <!--StarLight Brand Content ® -->
+         <a class="navbar-brand" href="index.html"> INFO PRODUCT</a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li class="active"><a href="sl_journal.html?type=r">Журнал</a></li>
+              <li><a href="#contact">О сервисе</a></li>
+              <li><a href="#contact">Контакти</a></li>
+              <li><a href="#contact">Довідка</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br><br><br>
+
+
+<div class="container-fluid">
+
+
+    <!--head-->
+	<div class="infohead">
+	    <h3 style="color:#24BD15;font-weight: bold;" >
+	        <span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Информация о селско-хозяйственной продукции
+	    </h3>
+	    <p class="infosub"> Данные о сельскохозяйственной продукции.</p>
+	    <hr>
+	</div>    
+
+
+    <table id="Production" class="table tables-bordered table-hover table-condensed table-striped">
+
+        <thead style="background-color: #F8F6F5 ;">
+			<tr> 
+			    <th>#</th>  
+			    <th>Продукция</th> 
+			    <th>ЕИ</th>
+			    <th>Цена</th>
+			    <th>Мин. парт.</th>
+			    <th>Организация</th>
+			    <th>Телефон</th>
+			    <th>Область</th>
+			    <th>Нас пункт</th>
+			</tr>
+	    </thead>		
+
+        <tbody>
+			<tr> 
+			    <td>1</td>  
+			    <td>Капуста</td> 
+			    <td>Тонна</td>
+			    <td>1 200.00</td>
+			    <td>1 тонна</td>
+			    <td>ООО "Рассвет"</td>
+			    <td>8-097-456789</td>
+			    <td>Киевская</td>
+			    <td>Горобцовка</td>
+			</tr>
+
+			<tr> 
+			    <td>2</td>  
+			    <td>Картошка</td> 
+			    <td>Тонна</td>
+			    <td>600.00</td>
+			    <td>1 тонна</td>
+			    <td>ООО "Рассвет"</td>
+			    <td>8-097-456789</td>
+			    <td>Киевская</td>
+			    <td>Горобцовка</td>
+			</tr>
+
+
+			<tr> 
+			    <td>3</td>  
+			    <td>Лук репчатый</td> 
+			    <td>Тонна</td>
+			    <td>240.00</td>
+			    <td>1 тонна</td>
+			    <td>ООО "Рассвет"</td>
+			    <td>8-097-456789</td>
+			    <td>Киевская</td>
+			    <td>Горобцовка</td>
+			</tr>
+
+
+			<tr> 
+			    <td>4</td>  
+			    <td>Свинина</td> 
+			    <td>Кг.</td>
+			    <td>100.30</td>
+			    <td>220 кг</td>
+			    <td>ООО "Рассвет"</td>
+			    <td>8-097-456789</td>
+			    <td>Киевская</td>
+			    <td>Горобцовка</td>
+			</tr>
+
+			<tr> 
+			    <td>5</td>  
+			    <td>Курица</td> 
+			    <td>Кг.</td>
+			    <td>120.30</td>
+			    <td>10 кг</td>
+			    <td>ООО "Рассвет"</td>
+			    <td>8-097-456789</td>
+			    <td>Киевская</td>
+			    <td>Горобцовка</td>
+			</tr>
+
+			<tr> 
+			    <td>6</td>  
+			    <td>Свинина</td> 
+			    <td>Кг.</td>
+			    <td>98.00</td>
+			    <td>20 кг</td>
+			    <td>ООО "Закат"</td>
+			    <td>8-097-456711</td>
+			    <td>Киевская</td>
+			    <td>Дмитриевка</td>
+			</tr>
+
+			<tr> 
+			    <td>7</td>  
+			    <td>Курица</td> 
+			    <td>Кг.</td>
+			    <td>220.30</td>
+			    <td>24 кг</td>
+			    <td>ООО "Закат"</td>
+			    <td>8-097-456711</td>
+			    <td>Киевская</td>
+			    <td>Дмитриевка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>8</td>  
+			    <td>Огурцы</td> 
+			    <td>Кг.</td>
+			    <td>198.00</td>
+			    <td>23 кг</td>
+			    <td>ООО "Промысловое"</td>
+			    <td>8-097-426722</td>
+			    <td>Киевская</td>
+			    <td>Житомир</td>
+			</tr>
+
+			<tr> 
+			    <td>9</td>  
+			    <td>Буряк</td> 
+			    <td>Кг.</td>
+			    <td>220.30</td>
+			    <td>24 кг</td>
+			    <td>ООО "Закат"</td>
+			    <td>8-097-456711</td>
+			    <td>Киевская</td>
+			    <td>Дмитриевка</td>
+			</tr>
+
+			<tr> 
+			    <td>10</td>  
+			    <td>Подсолняшник</td> 
+			    <td>Кг.</td>
+			    <td>1220.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>11</td>  
+			    <td>Арбуз</td> 
+			    <td>Кг.</td>
+			    <td>4.30</td>
+			    <td>1000 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>12</td>  
+			    <td>Зерно посевное</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>10000 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>13</td>  
+			    <td>Молоко</td> 
+			    <td>Кг.</td>
+			    <td>9.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>14</td>  
+			    <td>Масло</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>15</td>  
+			    <td>Баклажан</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+             <tr> 
+			    <td>16</td>  
+			    <td>Капуста брокколи</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+           <tr> 
+			    <td>17</td>  
+			    <td>Капуста цветная</td> 
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+           <tr> 
+			    <td>18</td>  
+				<td>Картофель(молод)</td>
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+           <tr> 
+			    <td>18</td>  
+				<td>Картофель(молод)</td>
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+           <tr> 
+			    <td>19</td>  
+				<td>Перец желтый</td>
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>20</td>  
+			    <td>Буряк</td> 
+			    <td>Кг.</td>
+			    <td>220.30</td>
+			    <td>24 кг</td>
+			    <td>ООО "Закат"</td>
+			    <td>8-097-456711</td>
+			    <td>Киевская</td>
+			    <td>Дмитриевка</td>
+			</tr>
+
+			<tr> 
+			    <td>21</td>  
+			    <td>Подсолняшник</td> 
+			    <td>Кг.</td>
+			    <td>1220.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>22</td>  
+			    <td>Арбуз</td> 
+			    <td>Кг.</td>
+			    <td>4.30</td>
+			    <td>1000 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>23</td>  
+			    <td>Зерно посевное</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>10000 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>24</td>  
+			    <td>Молоко</td> 
+			    <td>Кг.</td>
+			    <td>9.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>25</td>  
+			    <td>Масло</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+			<tr> 
+			    <td>26</td>  
+			    <td>Баклажан</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+             <tr> 
+			    <td>27</td>  
+			    <td>Капуста брокколи</td> 
+			    <td>Кг.</td>
+			    <td>20.30</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+           <tr> 
+			    <td>28</td>  
+			    <td>Капуста цветная</td> 
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+
+           <tr> 
+			    <td>29</td>  
+				<td>Картофель(молод)</td>
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+           <tr> 
+			    <td>30</td>  
+				<td>Картофель(молод)</td>
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+
+
+           <tr> 
+			    <td>31</td>  
+				<td>Перец желтый</td>
+			    <td>Кг.</td>
+			    <td>6.00</td>
+			    <td>100 кг</td>
+			    <td>ООО "Весняное"</td>
+			    <td>8-095-4447151</td>
+			    <td>Киевская</td>
+			    <td>Горбуновка</td>
+			</tr>
+     </tbody>
+	</table>
+
+
+<br>
+
+<!--Footer-->
+<p class="infofoot">
+    All rights reserved.<br>
+    (c) Sevice Flex  Kyev - 2017<br>
+    <a href="mailto:alerc@meta.ua">Контакты</a>|<a href="#info">Info</a> | <a href="#Rep">Отзыв</a> | <a href="#Old">Заявка</a> | <a href="#Rep">Справка</a> | <a href="#Rep">API</a>
+</p>
+
+</div>	
+</body>
+</html>
