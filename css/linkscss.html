@@ -1,0 +1,31 @@
+<html dir="ltr">
+<head runat="server">
+<META name="WebPartPageExpansion" content="full">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META content="IE=edge" http-equiv="X-UA-Compatible">
+
+<title>CSS</title>
+     <style type="text/css">
+           a[rel=artt]{     color: lime ;}
+           h1[rel=external] { color: red; }
+           a[rel=nt][title=arts]{color: maroon; content:  'dd';}
+           a[rel*=tr]{color: maroon; font-weight: bold ; color: red;}
+           a[rel^=setr]{color: maroon; font-weight: bold ; color: gray;}
+           a[rel:visited=setr]{color: maroon; font-weight: bold ; color: gray;}
+           a[href$=winner.ua]{color: maroon; font-weight: bold ; color: gray; text-decoration: none ;border: thin lime solid ; }
+     </style>
+</head>
+
+<body>
+
+<form id="form1" runat="server">
+<h1 rel="external">Attribute Equals</h1><br>
+<a href="#" rel="artt">Newsss</a><br>
+<a href="#" title="arts" rel="nt">Newsss</a><br>
+<a href="#" title="syst" rel="netr">Пример 2</a><br>
+<a href="#" title="myssysts" rel="setrdddd">Пример 2</a><br>
+<a href="#" title="myssysts" rel="setrdddd">Заканчиватеся</a><br>
+<a href="www.portal.winner.ua" title="myssysts" rel="setrdddd">Заканчиватеся</a>
+</form>
+</body>
+</html>
