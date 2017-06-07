@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+
+<link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link   rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+	
+	function wer(t){
+        hdeall();
+		$("#d"+t).show(500);
+	}
+
+    // Hidden all div
+	function hdeall(){
+		$("div[dvs|='menudiv'").hide();
+	}
+</script>
+
+<body  onload="hdeall()">
+
+<nav class="w3-sidenav w3-black" style="width:70px">
+  <a class="w3-padding-16" href="#we1" onclick="wer(1)"><i class="fa fa-home w3-xxlarge"></i></a>
+  <a class="w3-padding-16" href="#we2" onclick="wer(2)"><i class="fa fa-search w3-xxlarge"></i></a>
+  <a class="w3-padding-16" href="#we3" onclick="wer(3)"><i class="fa fa-envelope w3-xxlarge"></i></a>
+  <a class="w3-padding-16" href="#we4" onclick="wer(4)"><i class="fa fa-globe w3-xxlarge"></i></a>
+  <a class="w3-padding-16" href="#we5" onclick="wer(5)"><i class="fa fa-trash w3-xxlarge"></i></a>
+</nav>
+
+
+
+<div style="margin-left:70px">
+
+	<div id="d1" class="w3-container" dvs='menudiv'>
+           <h4>Да вторая страница</h4>	  
+           dddd11
+	</div>
+
+
+   <div id="d2" class="w3-container" dvs='menudiv'>
+           <h4>Да вторая страница</h4>	
+
+           Описание некоторых пунктов меню для решения своих простых задач.
+           На первом уровне
+           <a href="example.html" hreflang="en">Some text</a>
+           <a href="example.html" hreflang="en-UK">Some other text</a>
+           <a href="example.html" hreflang="english">will not be outlined</a>
+	</div>
+
+
+	<div id="d3" class="w3-container" dvs='menudiv'>
+           <h4>Да вторая страница</h4>	  
+           <table class="table">
+                 <tr>
+                      <th>Задача</th>
+                      <th>Ответственный</th>
+                 </tr>     
+
+                 <tr>
+                      <th>Новый справочник Видеоклипы</th>
+                      <th>Дудник Денис</th>
+                 </tr>     
+           </table>
+	</div>
+
+   <div id="d4" class="w3-container" dvs='menudiv'>
+           <h4>Да вторая страница</h4>	  
+          
+	</div>
+
+
+	<div id="d5" class="w3-container" dvs='menudiv'>
+           <h4>Да вторая страница</h4>	  
+
+	</div>
+</div>
+</body>
+</html>
