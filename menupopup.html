@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@ Page Language="C#" %>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Untitled 2</title>
+<style type="text/css">
+
+.style1 {
+				background-color: #008000;
+}
+
+.style2 {
+				background-color: #C0C0C0;
+}
+
+</style>
+</head>
+
+
+<script type="text/javascript" >
+
+
+// Show Div
+//
+function nmns (fam, ima, otch, dr, el)
+{
+  var tabss = '<table border="1" width="500px">' +
+              '<tr><td> <strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   </strong> :</td> <td>' + fam            + ' </td> </tr>'     +
+              '<tr><td> <strong>ï¿½ï¿½ï¿½       </strong> :</td> <td>' + ima            + ' </td> </tr>'     +
+              '<tr><td> <strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  </strong> :</td> <td>' + otch           + ' </td> </tr>'     +
+              '<tr><td> <strong>ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ </strong> :</td> <td>' + dr             + ' </td> </tr>'     +
+              '<tr><td> <strong>Element   </strong> :</td> <td>' + el.innerHTML   + ' </td> </tr>'     +
+              '<tr><td> <strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   </strong> :</td> <td>' + event.clientX   + ' </td> </tr>'     +
+              '<tr><td> <strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   </strong> :</td> <td>' + el.offsetLeft   + ' </td> </tr>'     +
+              '<tr><td> <strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½   </strong> :</td> <td>' + el.offsetLeft   + ' </td> </tr>'     +
+              '</table>';
+              
+              
+//var ttt = fam + '/n' + ima + '/n'  + otch + 'dd' 
+
+document.getElementById ('d01').style.display='';
+document.getElementById ('d01').innerHTML = tabss;
+document.getElementById ('d01').style.top  = event.clientY + 5 + 'px' ;
+document.getElementById ('d01').style.left = event.clientX + 5 + 'px' ;
+
+//el.title=ttt;
+} 
+
+
+// Hiden Div
+function nmnf ()
+{
+  document.getElementById ('d01').style.display='none';
+} 
+
+
+
+</script>
+
+
+<body>
+
+<form id="form1" runat="server">
+
+<label id="L100"><span class="style1">****</span>
+<br />
+<br />
+<span lang="uk"><a href="#" onmouseover="nmns('Ñ–Ñ„Ñ„Ñ„','Ñ‹Ñ‹Ñ‹Ñ‹','Ñ‹Ñ‹Ñ‹Ñ‹', '01-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',this);" onmouseout="nmnf();" title="ss">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1</a><br />
+<span lang="uk"><a href="#" onmouseover="nmns('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½','ï¿½', '06-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', this);" onmouseout="nmnf();">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2</a><br />
+<span lang="uk"><a href="#" onmouseover="nmns('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', '05-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',this);" onmouseout="nmnf();" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 3 </a><br />
+<span lang="uk"><a href="#" onmouseover="nmns('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', '02-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½',this);" onmouseout="nmnf();" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1</a><br />
+
+
+
+<br />
+<br />
+<br />
+</span>
+<br />
+
+<div id="d01" style="display: ; position:absolute; background: 'gray';   border-style:solid;width:628px; height:222px; background-color:'#f5f5f5'; padding:3px;z-Index:3; left: 70px; top: 263px; opacity: 0.75;" class="style2" ></div>
+
+
+<input name="Button1" type="button" value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" onclick="nmns('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½','ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½', '01-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½');" style="width: 160px" />
+<br />
+
+
+<br />
+</label>
+</form>
+
+</body>
+
+</html>
