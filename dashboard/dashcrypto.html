@@ -1,0 +1,492 @@
+       <html>
+       <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/modules/export-data.js"></script>        
+
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" >
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" ></script>
+            <link   href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'></link>
+           
+            <!--Awesome-->
+            <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">   
+            <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script> 
+
+            <!--Notify-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
+
+            <!--  <link   href="static/css/main.css" rel='stylesheet' type='text/css'></link>
+            <script src="static/js/notify.js"></script>
+            <script src="static/js/main.js"></script> -->
+            
+
+            <script type="text/javascript">
+
+             $(function () {
+                            $('[data-toggle="tooltip"]').tooltip()
+             })
+
+
+               var dat       = 182000; 
+               var dat_buy   = dat;  
+
+
+              // Set Interval
+              setInterval(function() {
+                Getapi();
+              }, 4000);
+
+
+              // Load page
+              function Lodpage(){
+                      // setInterval(Getapi(), 2000);
+              }
+
+
+
+              // Get API
+              function Getapi(){
+                  // Asks - Bids
+                  $.getJSON("https://kuna.io/api/v2/depth?market=btcuah", function(data) {
+
+                       var ask     = data.asks;
+                       var bds     = data.bids;
+                        
+                       $("#pok_ask").html(Sl(ask[0][0])); 
+                       $("#pok_bids").html(Sl(bds[0][0])); 
+
+                  });
+
+
+
+
+                  var jqxhr = $.getJSON("https://kuna.io/api/v2/tickers/btcuah", function(data) {
+
+                      // var items = [];
+                      // $.each( data, function( key, val ) {
+                      //     items.push( "<li id='" + key.ticker + "'>" + val + "</li>" );
+                      //  });
+
+                      // $( "<ul/>", {  "class": "my-new-list",    html: items.join( "" ) }).appendTo( "body" );
+
+                                     
+                      
+                      var tck     = data.ticker;
+                      var my_sell = 195616;
+                      var my_uah  = 7623.3;
+                      var my_btc  = 0.03950536;
+                      var ras     = tck.sell-tck.buy;
+
+
+
+                      // Load grafhik
+                      dat    = Number(tck.sell);  
+                      dat_buy= Number(tck.buy);  
+
+
+                      $("#pok_buy").html(Sl(tck.buy)); 
+                      $("#pok_sell").html(Sl(tck.sell)); 
+                      $("#pok_low").html(Sl(tck.low)); 
+                      $("#pok_hight").html(Sl(tck.high)); 
+                      $("#pok_last").html(Sl(tck.last)); 
+                      $("#pok_vol").html(Sl(tck.vol)); 
+                      $("#pok_price").html(Sl(tck.price)); 
+                      
+
+                      $("#my_mon").html(my_sell); 
+                      $("#my_raz").html(ras); 
+                      $("#my_sell").html(tck.buy - my_sell); // Чем выше тем больше доход
+                      $("#my_profit").html(ras); 
+ 
+                      $("#my_btc").html(my_btc); 
+                      $("#my_uah").html(my_uah); 
+
+
+                   if (tck.buy-my_sell>1000){
+                      $.notify(tck.buy, "info");
+                      $.notify(tck.buy-my_sell, "success");
+                    }  
+
+
+                      if (ras>my_sell) {
+                         $("#my_forecast").html("BUY");                         
+                      }else{
+                         $("#my_forecast").html("SELL");                         
+                      };
+
+                      if (ras>0) {
+                         $("#my_forecast").html("BUY");                         
+                      }else{
+                         $("#my_forecast").html("WAIT");                         
+                      };                      
+
+                      // var start = Date.now('October 1996 05:35:32'); 
+                      $("#main_time").html(timetoday());  
+
+                     })
+
+                  .done(function() {
+                        console.log("second success");
+                  })
+                  .fail(function() {
+                         console.log("error");
+                  })
+                 .always(function() {
+                         console.log("complete" );
+                  });
+
+                // console.log(jqxhr);
+              }
+
+
+
+
+              // Целое число 
+              function Sl(Num){
+                return Num.split(".")[0]
+              }  
+
+              // Current Date
+              function today(){
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+
+                var yyyy = today.getFullYear();
+                if (dd < 10) {
+                  dd = '0' + dd;
+                } 
+                if (mm < 10) {
+                  mm = '0' + mm;
+                } 
+                var today = dd + '.' + mm + '.' + yyyy;
+                return today;
+              }
+
+
+               // Date + time
+               function timetoday(){
+                  var d = new Date,
+                  dformat = [d.getMonth()+1, d.getDate(), d.getFullYear()].join('.')+' '+ [d.getHours(), d.getMinutes(), d.getSeconds()].join(':');
+                  return dformat;
+               }
+
+
+               // Save Storage
+               function SaveStorage(){
+                   
+                        // var db = openDatabase('mydb', '1.0', 'my first database', 2 * 1024 * 1024);
+                        // db.transaction(function (tx) {
+                        //   tx.executeSql('CREATE TABLE IF NOT EXISTS foo (id unique, text)');
+                        //   tx.executeSql('INSERT INTO foo (id, text) VALUES (1, "synergies")');
+                        // });
+
+                        var Buy=$("#pok_buy").text();
+                        var Sell=$("#pok_sell").text();
+
+                        // var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+
+                        localStorage.setItem('Last_buy',  Buy);
+                        localStorage.setItem('Last_sell', Sell);
+
+                   // Put the object into storage
+                   // localStorage.setItem('testObject', JSON.stringify(testObject));
+
+                    // Retrieve the object from storage
+                    // var retrievedObject = localStorage.getItem('testObject');
+
+                    // console.log('retrievedObject: ', JSON.parse(retrievedObject));
+                   $.notify("Save Buy to web  " + Buy,  "success");
+                   $.notify("Save Sell to web " + Sell, "info");
+
+               }
+            </script>
+
+
+            <style type="text/css">
+
+                :root{
+                        --v-back:         #273746;
+                        --v-back-greens:  #E8F8F5;
+                        --v-back-roz:     #EFE9F0;
+                        --v-back-green:   #E8FAF8;
+                        --v-back-blue:    #EBFAFF;
+                        --v-back-yellow:  #FFF8E8;
+                }
+              
+
+                 html           {font-family:'Roboto'; } 
+                 .bodys         {background-color: #F2F4F7;}
+                 body           {backgroundcolor:  #f5f7f7;}
+
+            	  .hds-curr       {background-color: #F5F5F5;}
+                .hds-blues      {color:            #3498DB;}                
+                .hds-reds       {color:            #C70039;}                
+                .hds-green      {color:            #52BE80;}  
+                .hds-grey       {color:            #5D6D7E;}   
+                .hds-purple     {color:            #F39C12;}   
+
+                .hds-bc-purple  {background-color: var(--v-back-roz)    !important;} 
+                .hds-bc-green   {background-color: var(--v-back-green)  !important;}                                   
+                .hds-bc-blue    {background-color: var(--v-back-blue)   !important;}                                   
+                .hds-bc-yellow  {background-color: var(--v-back-yellow) !important;}                                   
+               /* .hds-bg-green   {color:            var(--v-back-green);}*/  
+
+                .hds-descript   {font-size: 12px; color: #ccc;}           
+
+                .hds-currency{
+            		          background-color: #F7F7F7; 
+            		          /*color:          #C70039; */
+            		          padding:          10px; 
+            		          margin:           5px; 
+            		          border:           1px solid #CCC;
+            		          border-radius:    5px; 
+            		          text-align:       center; 
+            		          font-weight:      bold;
+            		          font-size:        35px; 
+                          boxshadow: -1px 3px 3px rgba(0, 0, 0, 0.2); 
+                          box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+            		      }
+                
+                a, img, ol, ul, button {
+                          -webkit-transition: all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                          -moz-transition:    all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                          -o-transition:      all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                          transition:         all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                }      
+           </style>
+</head>
+
+
+<body onload="Lodpage()">
+
+
+
+        <div class='container'>
+
+
+
+          <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="/">
+                    <b style="color: #C70039; font-weight: bold;">TRADE</b>
+                </a>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                      <li class="nav-item">  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>    </li>
+                      <li class="nav-item">  <a class="nav-link" href="https://kuna.io/markets/btcuah">Kuna</a> </li>
+                      <li class="nav-item">  <a class="nav-link" href="/api/view/">Журнал</a> </li>
+                      <li class="nav-item">  <a  onclick="DeleteTable()" class="nav-link" href="">Удаление таблиц</a> </li>
+                      <li class="nav-item">  <a  onclick="CreateTable()" class="nav-link" href="">Создание таблиц</a> </li>
+                  </ul>
+
+                  <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text"        placeholder="Поиск">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+          </nav>
+
+               <br>
+               <h4 class="hds-grey">Текущие показатели торгов   <small id="main_time"></small></h4>
+
+               <div class="row">
+                     <div class="col hds-currency hds-reds">   <span id="pok_buy">0</span>   <br> <span class="hds-descript"> Buy</span>  </div>
+                     <div class="col hds-currency hds-green">  <span id="pok_sell">0</span>  <br> <span class="hds-descript"> Sell</span>  </div>
+                     <div class="col hds-currency hds-grey">   <span id="pok_low">0</span>   <br> <span class="hds-descript"> Low</span>  </div>
+                     <div class="col hds-currency hds-purple hds-bc-yellow"> <span id="pok_hight">0</span> <br> <span class="hds-descript"> Hight</span>  </div>
+
+               </div>
+           
+               <h4 class="hds-grey">Текущие показатели торгов</h4>
+               <div class="row">
+                     <div class="col hds-currency hds-reds" data-toggle="tooltip" data-placement="top" title="Последняя продажа"> <span id="pok_last">0</span>  <br> <span class="hds-descript"> Last</span>  </div>
+                     <div class="col hds-currency hds-reds"> <span id="pok_vol">0</span>   <br> <span class="hds-descript"> Vol</span>  </div>
+                     <div class="col hds-currency hds-reds"> <span id="pok_price">0</span> <br> <span class="hds-descript"> Price</span>  </div>
+                     <div class="col hds-currency hds-reds"> <span id="pok_ask">0</span>   <br> <span class="hds-descript"> Ask</span>  </div>
+                     <div class="col hds-currency hds-reds"> <span id="pok_bids">0</span>  <br> <span class="hds-descript"> Bids</span>  </div>
+               </div>
+
+               <h4 class="hds-grey">Мои активы</h4>
+               <div class="row">
+                     <div class="col hds-currency hds-blues hds-bc-blue">    <span id="my_forecast">Wait</span>  <br> <span class="hds-descript"> Forecast</span> </div>
+                     <div class="col hds-currency hds-green hds-bc-green" data-toggle="tooltip" data-placement="top" title="Чем больше тем больше прибыль">   <span id="my_sell">0</span>     <br> <span class="hds-descript"> Sell</span>     </div>
+                     <div class="col hds-currency hds-reds  hds-bc-purple">  <span id="my_profit">0</span>   <br> <span class="hds-descript"> Profit</span>   </div>
+                     <div class="col hds-currency hds-green"> <span id="my_mon">0</span>      <br> <span class="hds-descript"> Курс продажи</span> </div>
+                     <div class="col hds-currency hds-green"> <span id="my_btc">0</span>      <br> <span class="hds-descript"> BTC</span>      </div>
+                     <div class="col hds-currency hds-green hds-bg-green"> <span id="my_uah">0</span>      <br> <span class="hds-descript"> UAH</span>      </div>
+               </div>
+
+               <h4 class="hds-grey">График</h4>
+               <div class="row">
+                      <div class="col hds-currency"> <div id="container" ></div>    </div>
+                      <div class="col hds-currency"> <div id="container_buy"></div> </div>
+                </div>               
+              
+
+              <!--
+               <h4 class="hds-grey">График</h4>
+               <div class="row">
+                      <div class="col hds-currency"> <div id="container-rpm" ></div>    </div>
+                      <div class="col hds-currency"> <div id="container-speed"></div> </div>
+                </div>               
+              -->
+
+
+
+<!--
+               <br><br>
+               <h4 class="hds-grey">Продажи и ордера</h4>
+               
+
+               <table class="table">
+                      <thead>
+                               <tr> 
+                                    <th>Дата</th>
+                                    <th>Операция</th>
+                                    <th>Цена</th>
+                                    <th>BTC</th>
+                                    <th>UAH</th>
+                              </tr>      
+                      </thead>
+                      <tbody>
+
+                              <tr> <td>11.05.2019 10:05</td> <td> SELL</td> <td>186.000</td><td>186.000</td><td>2553</td></tr>
+                              <tr> <td>11.05.2019 10:05</td> <td> SELL</td> <td>186.000</td><td>186.000</td><td>2553</td></tr>
+                              <tr> <td>11.05.2019 10:05</td> <td> SELL</td> <td>186.000</td><td>186.000</td><td>2553</td></tr>
+                              <tr> <td>11.05.2019 10:05</td> <td> SELL</td> <td>186.000</td><td>186.000</td><td>2553</td></tr>
+                              <tr> <td>11.05.2019 10:05</td> <td> SELL</td> <td>186.000</td><td>186.000</td><td>2553</td></tr>
+
+
+                        
+                      </tbody>          
+                 
+               </table> 
+-->
+
+               <br>
+               <h4 class="hds-grey">Управление торгами</h4>
+              
+               <button type="button" class="btn btn-primary" onclick="Getapi()">Продать валюту</button>
+               <button type="button" class="btn btn-info">Купить валюту</button>
+               <button type="button" class="btn btn-success">Продать грн</button>
+               <button type="button" class="btn btn-success">Купить грн</button>
+
+               <button type="button" class="btn btn-warning" onclick="SaveStorage()">Записать валюту</button>
+               <br>
+               <hr>
+   </div>
+</body>
+
+<script type="text/javascript">
+
+// График
+Highcharts.chart('container', {
+  chart: {
+    type:        'spline',
+    animation:    Highcharts.svg, // don't animate in old IE
+    marginRight:  1,
+    events:      {
+      load: function () {
+
+        // set up the updating of the chart each second
+        var series = this.series[0];
+            setInterval(function () {
+                                     var x = (new Date()).getTime(), // current time
+                                     y = dat;
+                                     series.addPoint([x, y], true, true);
+                                  
+                                    }, 3000);
+      }
+    }
+  },
+  title:     { text:         'Продажа' },
+  subtitle:  { text:         'График показывает данные в онлайн режиме по продаже BTC', align: 'center'},
+  time:      { useUTC:       false },
+  xAxis:     { type:         'datetime',    tickPixelInterval: 60  },
+  yAxis:     { title:        {text: 'Value'},  plotLines: [{value: 0,    width: 10,    color: '#F0F080' }] },
+  tooltip:   { headerFormat: '<b>{series.name}</b><br/>',   pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}' },
+  legend:    { enabled:      false },
+  exporting: { enabled:      false },
+  series:    [ {name:        'Sell',  data: (function () {
+      
+      // generate an array of random data
+      var data = [],
+          time = (new Date()).getTime(),
+          i;
+
+      // 
+      for (i = -19; i <= 0; i += 1) {
+          data.push({x:time + i*5000, y:dat});
+      }
+
+      return data;
+    }())
+  }]
+});
+
+
+
+// График
+Highcharts.chart('container_buy', {
+  chart: {
+    type:        'spline',
+    animation:    Highcharts.svg, // don't animate in old IE
+    marginRight:  10,
+    events:      {
+      load: function () {
+
+        // set up the updating of the chart each second
+        var series = this.series[0];
+            setInterval(function () {
+                                     var x = (new Date()).getTime(), // current time
+                                     y = dat_buy;
+                                     series.addPoint([x, y], true, true);
+                                  
+                                    }, 3000);
+      }
+    }
+  },
+
+  title:     {text: 'Покупка' },
+  subtitle:  {text: 'График показывает данные в онлайн режиме по покупке BTC', align: 'center'},
+
+  time:      { useUTC:       false },
+  
+  xAxis:     { type:         'datetime',       tickPixelInterval: 60  },
+  yAxis:     { title:        {text: 'Value'},  plotLines: [{value: 0,    width: 10,    color: 'red' }] },
+  tooltip:   { headerFormat: '<b>{series.name}</b><br/>',   pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}' },
+  legend:    { enabled:      false },
+  exporting: { enabled:      false },
+  series:    [ {name:        'Sell',  data: (function () {
+      
+      // generate an array of random data
+      var data = [],
+          time = (new Date()).getTime(),
+          i;
+
+      // 
+      for (i = -19; i <= 0; i += 1) {
+          data.push({x:time + i*5000, y:dat_buy});
+      }
+
+      return data;
+    }())
+  }]
+});
+
+</script>  
+</html>
