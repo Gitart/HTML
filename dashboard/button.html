@@ -1,0 +1,415 @@
+       <html>
+       <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <script src="https://code.highcharts.com/highcharts.js"></script>
+            <script src="https://code.highcharts.com/modules/exporting.js"></script>
+            <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" >
+            <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" ></script>
+            <link   href="http://fonts.googleapis.com/css?family=Roboto" rel='stylesheet' type='text/css'></link>
+
+            <!--Awesome-->
+            <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+            <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+            <!--Notify-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/notify/0.4.2/notify.js"></script>
+
+
+
+            <style type="text/css">
+
+                :root{
+                        --v-back:         #273746;
+                        --v-back-greens:  #E8F8F5;
+                        --v-back-roz:     #EFE9F0;
+                        --v-back-green:   #E8FAF8;
+                        --v-back-blue:    #EBFAFF;
+                        --v-back-yellow:  #FFF8E8;
+                }
+
+
+                 html           {font-family:'Roboto'; }
+                 .bodys         {background-color: #F2F4F7;}
+                 body           {backgroundcolor:  #f5f7f7;}
+
+            	.hds-curr       {background-color: #F5F5F5;}
+                .hds-blues      {color:            #3498DB;}
+                .hds-reds       {color:            #C70039;}
+                .hds-green      {color:            #52BE80;}
+                .hds-grey       {color:            #5D6D7E;}
+                .hds-purple     {color:            #F39C12;}
+
+                .hds-bc-purple  {background-color: var(--v-back-roz)    !important;}
+                .hds-bc-green   {background-color: var(--v-back-green)  !important;}
+                .hds-bc-blue    {background-color: var(--v-back-blue)   !important;}
+                .hds-bc-yellow  {background-color: var(--v-back-yellow) !important;}
+               /* .hds-bg-green   {color:            var(--v-back-green);}*/
+
+                .hds-descript   {font-size: 12px; color: #ccc;}
+
+                .hds-currency{
+            		          background-color: #F7F7F7;
+            		          /*color:          #C70039; */
+            		          padding:          10px;
+            		          margin:           5px;
+            		          border:           1px solid #CCC;
+            		          border-radius:    5px;
+            		          text-align:       center;
+            		          font-weight:      bold;
+            		          font-size:        35px;
+                          boxshadow: -1px 3px 3px rgba(0, 0, 0, 0.2);
+                          box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+            		      }
+
+                a, img, ol, ul, button {
+                          -webkit-transition: all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                          -moz-transition:    all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                          -o-transition:      all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                          transition:         all 0.375s cubic-bezier(0.4, 0, 0.2, 1);
+                }
+
+                .cl-btns-menu {
+                       background-color: #f7f7f7;
+                       padding:       10px;
+                       margin:        3px;  
+                       width:         60px;
+                       height:        60px;
+                       display:       inline-block;
+                       text-align:    center;
+                       border-radius: 2px;
+                       border:        1px solid #CCC;
+                       color:         #283747  ;
+                       
+
+
+                       -webkit-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                       -moz-transition:    all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                       -o-transition:      all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                       transition:         all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                       -webkit-animation-name: rubberBand;
+                       animation-name:         rubberBand;
+                }
+                
+                .cl-btns-menu:hover {
+                	/*width: 300px;*/
+                	background-color: #EBF5FB;
+                	color:            #3359C9;
+                	cursor:           pointer;
+                	border-radius: 30px;
+
+                	/*animation-delay: 1s;*/
+                    /*animation-delay: 0s;*/
+                    /*animation-delay: -1500ms;*/
+
+                   
+
+                	transform: rotate(360deg) ;
+                	/*transform: rotate(45deg) translateX(180px);;*/
+                	/*transition: cubic-bezier(0.1, 0.7, 1.0, 0.1) ;*/
+                	/*transition: steps(1.0, jump-end);*/
+                	 transform: scale(1.5, 1.5);
+
+                }	
+
+                .btn {border-radius: 2px !important;}   
+           </style>
+
+
+
+
+<style type="text/css">
+	.items-stretch {
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+.flex-nowrap {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+}
+.flex-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.shadow-3 {
+    -webkit-box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,0.1);
+    box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,0.1);
+}
+.br3 {
+    border-radius: .5rem;
+}
+</style>
+
+
+
+</head>
+
+
+<body onload="Lodpage()">
+        <div class='container'>
+
+               <br>
+               <h4 class="hds-green">
+									<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18 fa-spin fa-lg">
+										<path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path>
+									</svg>
+               Управление и менеджмент портала</h4>
+      
+               <div class="row">
+                     <div class="col"> 
+
+                     	      <span class="cl-btns-menu"><i class="fas fa-home fa-2x"></i></span>
+                     	      <span class="cl-btns-menu"><i class="fas fa-image fa-2x"></i></span>
+                     	      <span class="cl-btns-menu"><i class="fas fa-bell fa-2x"></i></span>  
+                     	      <span class="cl-btns-menu"><i class="fas fa-bug fa-2x"></i></span>
+                     	      <span class="cl-btns-menu"><i class="fas fa-quidditch fa-2x"></i></span>
+                     	      <span class="cl-btns-menu"><i class="fas fa-handshake fa-2x"></i></span>
+                     	      <span class="cl-btns-menu"><i class="fas fa-exclamation-circle fa-2x"></i></span>
+                     	      <span class="cl-btns-menu"><i class="fas fa-book fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-calendar fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-cogs fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-compass fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-copy fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-file fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-gem fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-heart fa-2x"></i></span>
+                     </div>
+               </div>
+
+
+
+               <br>
+               <h4 class="hds-green">
+               	<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-pen fa-w-16 fa-spin fa-lg"><path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z" class=""></path></svg>
+
+               Текущие показатели</h4>
+               
+               <div class="row">
+                     <div class="col"> 
+
+                     	      <span class="cl-btns-menu"><i class="fas fa-key fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-magic fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-lock fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-lock-open fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-shopping-bag fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-paste fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-search fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-space-shuttle fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-phone fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-shopping-cart fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-star fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-sticky-note fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-trash fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-utensils fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                     </div>
+               </div>
+
+
+
+               <br>
+               <h4 class="hds-green">
+               	<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-pen fa-w-16 fa-spin fa-lg"><path fill="currentColor" d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z" class=""></path></svg>
+
+               Общие сведения о портале</h4>
+
+
+               <div class="row">
+                     <div class="col"> 
+
+                     	      <span class="cl-btns-menu"><i class="fas fa-exclamation-circle fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-pencil-alt fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-pen-square fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-folder-open fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-folder fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-print fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-percent fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-file-alt fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-phone fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-shopping-cart fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-star fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-sticky-note fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-tools fa-2x"></i></span>
+                              <span class="cl-btns-menu"><i class="fas fa-trash fa-2x"></i></span>
+                              
+                              <span class="cl-btns-menu"><i class="fas fa-exclamation-triangle fa-2x"></i></span>
+                     </div>
+               </div>
+
+
+               <br>
+               <h4 class="hds-green">
+               Управление торгами
+               </h4>
+
+               <button type="button" class="btn btn-primary" onclick="Getapi()"><i class="fas fa-sticky-note"></i> Продать валюту</button>
+               <button type="button" class="btn btn-info">Купить валюту</button>
+               <button type="button" class="btn btn-success">Продать грн</button>
+               <button type="button" class="btn btn-success">Купить грн</button>
+
+               <button type="button" class="btn btn-warning" onclick="SaveStorage()">Записать валюту</button>
+               <br>
+               <hr>
+
+
+               <select class="btn">
+        <optgroup label="Attention Seekers">
+          <option value="bounce">bounce</option>
+          <option value="flash">flash</option>
+          <option value="pulse">pulse</option>
+          <option value="rubberBand">rubberBand</option>
+          <option value="shake">shake</option>
+          <option value="swing">swing</option>
+          <option value="tada">tada</option>
+          <option value="wobble">wobble</option>
+          <option value="jello">jello</option>
+          <option value="heartBeat">heartBeat</option>
+        </optgroup>
+
+        <optgroup label="Bouncing Entrances">
+          <option value="bounceIn">bounceIn</option>
+          <option value="bounceInDown">bounceInDown</option>
+          <option value="bounceInLeft">bounceInLeft</option>
+          <option value="bounceInRight">bounceInRight</option>
+          <option value="bounceInUp">bounceInUp</option>
+        </optgroup>
+
+        <optgroup label="Bouncing Exits">
+          <option value="bounceOut">bounceOut</option>
+          <option value="bounceOutDown">bounceOutDown</option>
+          <option value="bounceOutLeft">bounceOutLeft</option>
+          <option value="bounceOutRight">bounceOutRight</option>
+          <option value="bounceOutUp">bounceOutUp</option>
+        </optgroup>
+
+        <optgroup label="Fading Entrances">
+          <option value="fadeIn">fadeIn</option>
+          <option value="fadeInDown">fadeInDown</option>
+          <option value="fadeInDownBig">fadeInDownBig</option>
+          <option value="fadeInLeft">fadeInLeft</option>
+          <option value="fadeInLeftBig">fadeInLeftBig</option>
+          <option value="fadeInRight">fadeInRight</option>
+          <option value="fadeInRightBig">fadeInRightBig</option>
+          <option value="fadeInUp">fadeInUp</option>
+          <option value="fadeInUpBig">fadeInUpBig</option>
+        </optgroup>
+
+        <optgroup label="Fading Exits">
+          <option value="fadeOut">fadeOut</option>
+          <option value="fadeOutDown">fadeOutDown</option>
+          <option value="fadeOutDownBig">fadeOutDownBig</option>
+          <option value="fadeOutLeft">fadeOutLeft</option>
+          <option value="fadeOutLeftBig">fadeOutLeftBig</option>
+          <option value="fadeOutRight">fadeOutRight</option>
+          <option value="fadeOutRightBig">fadeOutRightBig</option>
+          <option value="fadeOutUp">fadeOutUp</option>
+          <option value="fadeOutUpBig">fadeOutUpBig</option>
+        </optgroup>
+
+        <optgroup label="Flippers">
+          <option value="flip">flip</option>
+          <option value="flipInX">flipInX</option>
+          <option value="flipInY">flipInY</option>
+          <option value="flipOutX">flipOutX</option>
+          <option value="flipOutY">flipOutY</option>
+        </optgroup>
+
+        <optgroup label="Lightspeed">
+          <option value="lightSpeedIn">lightSpeedIn</option>
+          <option value="lightSpeedOut">lightSpeedOut</option>
+        </optgroup>
+
+        <optgroup label="Rotating Entrances">
+          <option value="rotateIn">rotateIn</option>
+          <option value="rotateInDownLeft">rotateInDownLeft</option>
+          <option value="rotateInDownRight">rotateInDownRight</option>
+          <option value="rotateInUpLeft">rotateInUpLeft</option>
+          <option value="rotateInUpRight">rotateInUpRight</option>
+        </optgroup>
+
+        <optgroup label="Rotating Exits">
+          <option value="rotateOut">rotateOut</option>
+          <option value="rotateOutDownLeft">rotateOutDownLeft</option>
+          <option value="rotateOutDownRight">rotateOutDownRight</option>
+          <option value="rotateOutUpLeft">rotateOutUpLeft</option>
+          <option value="rotateOutUpRight">rotateOutUpRight</option>
+        </optgroup>
+
+        <optgroup label="Sliding Entrances">
+          <option value="slideInUp">slideInUp</option>
+          <option value="slideInDown">slideInDown</option>
+          <option value="slideInLeft">slideInLeft</option>
+          <option value="slideInRight">slideInRight</option>
+
+        </optgroup>
+        <optgroup label="Sliding Exits">
+          <option value="slideOutUp">slideOutUp</option>
+          <option value="slideOutDown">slideOutDown</option>
+          <option value="slideOutLeft">slideOutLeft</option>
+          <option value="slideOutRight">slideOutRight</option>
+          
+        </optgroup>
+        
+        <optgroup label="Zoom Entrances">
+          <option value="zoomIn">zoomIn</option>
+          <option value="zoomInDown">zoomInDown</option>
+          <option value="zoomInLeft">zoomInLeft</option>
+          <option value="zoomInRight">zoomInRight</option>
+          <option value="zoomInUp">zoomInUp</option>
+        </optgroup>
+        
+        <optgroup label="Zoom Exits">
+          <option value="zoomOut">zoomOut</option>
+          <option value="zoomOutDown">zoomOutDown</option>
+          <option value="zoomOutLeft">zoomOutLeft</option>
+          <option value="zoomOutRight">zoomOutRight</option>
+          <option value="zoomOutUp">zoomOutUp</option>
+        </optgroup>
+
+        <optgroup label="Specials">
+          <option value="hinge">hinge</option>
+          <option value="jackInTheBox">jackInTheBox</option>
+          <option value="rollIn">rollIn</option>
+          <option value="rollOut">rollOut</option>
+        </optgroup>
+      </select>
+
+
+
+
+
+       <br><br>
+       <h3>Оповещение</h3>
+
+<div class="flex flex-row flex-nowrap items-stretch shadow-3 br3">
+	<div class="br3 br--left bg-white pa3 flex flex-column items-center justify-center cyan5">
+		<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svg-inline--fa fa-star fa-w-18 fa-3x"><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z" class=""></path></svg>
+	</div> 
+	<div class="br3 br--right pa3 flex flex-column justify-center bg-white-90 black-70">
+		<p class="mv0 lh-copy f4 fw6">I'm afraid I can't star that, Dave. <span class="link cyan5 underline">Retry?</span></p>
+	</div>
+</div>
+
+
+
+   </div>
+</body>
+
+</html>
