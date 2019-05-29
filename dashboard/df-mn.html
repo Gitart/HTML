@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+<link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+<title>CodePen - Html CSS Graphs</title>
+<link rel='stylesheet' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css'>
+<style>
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+}
+
+.positive {
+  color: #7eb348;
+}
+
+.negative {
+  color: #cf3636;
+}
+
+.issuance {
+  color: #76a346 !important;
+}
+
+.redemption {
+  color: #1fc8f8 !important;
+}
+
+.small {
+  font-size: 0.6em;
+}
+
+.widget {
+  outline: 1px solid #111;
+  border-top: 1px solid #555;
+  display: flex;
+  flex-direction: column;
+  background: #3B3B3B;
+  color: #FFFFFF;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.widget--1x1 {
+  width: 256px;
+  height: 256px;
+}
+
+.widget--2x1 {
+  width: 512px;
+  height: 256px;
+}
+
+.widget--3x1 {
+  width: 768px;
+  height: 256px;
+}
+
+.widget-header, .widget-footer {
+  background: #2E2E2E;
+  width: 100%;
+  height: 30px;
+}
+
+.widget-content {
+  flex: 1;
+  padding: 20px;
+}
+
+.widget-footer a {
+  color: #666;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 8px;
+  margin-right: 8px;
+  float: right;
+}
+
+.widget-header-indicator {
+  border-radius: 10px;
+  width: 10px;
+  height: 10px;
+  background: #7eb348;
+  position: relative;
+  top: 8px;
+  left: 8px;
+}
+
+.padded {
+  padding: 1rem;
+}
+
+.value-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.value-list li {
+  margin: 0;
+  padding: 5px;
+}
+
+.value-list .description {
+  color: #666666;
+  font-size: 14px;
+  line-height: 10px;
+}
+
+.value-list .value {
+  color: #FFFFFF;
+  font-size: 45px;
+}
+
+.widget-content #donut {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}
+
+    </style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<div class='widget widget--2x1'>
+<header class='widget-header'>
+<div class='widget-header-indicator'></div>
+</header>
+<div class='widget-content'>
+<canvas id='donut' width='200px'></canvas>
+<ul class='value-list'>
+<li>
+<div class='description'>
+Issuance
+</div>
+<div class='value'>
+<span>101,342</span>
+<span class='positive small'>
+10.8%
+</span>
+</div>
+</li>
+<li>
+<div class='description'>
+Redemption
+</div>
+<div class='value'>
+<span>55,342</span>
+<span class='negative small'>
+2.8%
+</span>
+</div>
+</li>
+</ul>
+</div>
+<footer class='widget-footer'>
+<a class='fa fa-trash-o'></a>
+<a class='fa fa-cog'></a>
+</footer>
+</div>
+<div class='widget widget--1x1'>
+<header class='widget-header'>
+<div class='widget-header-indicator'></div>
+</header>
+<div class='widget-content'>
+<ul class='value-list'>
+<li>
+<div class='description'>
+Issuance
+</div>
+<div class='value'>
+<span class='positive'>
+10.8%
+</span>
+</div>
+</li>
+<li>
+<div class='description'>
+Redemption
+</div>
+<div class='value'>
+<span class='negative'>
+2.8%
+</span>
+</div>
+</li>
+</ul>
+</div>
+<footer class='widget-footer'>
+<a class='fa fa-trash-o'></a>
+<a class='fa fa-cog'></a>
+</footer>
+</div>
+<div class='widget widget--2x1'>
+<header class='widget-header'>
+<div class='widget-header-indicator'></div>
+</header>
+<div class='widget-content'>
+<canvas height='160px' id='line2' width='480px'></canvas>
+</div>
+<footer class='widget-footer'>
+<a class='fa fa-trash-o'></a>
+<a class='fa fa-cog'></a>
+</footer>
+</div>
+<div class='widget widget--3x1'>
+<header class='widget-header'>
+<div class='widget-header-indicator'></div>
+</header>
+<div class='widget-content'>
+<canvas height='160px' id='line' width='712px'></canvas>
+</div>
+<footer class='widget-footer'>
+<a class='fa fa-trash-o'></a>
+<a class='fa fa-cog'></a>
+</footer>
+</div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js'></script>
+
+<script id="rendered-js">
+      var donut = document.getElementById('donut');
+var donutCtx = donut.getContext('2d');
+var chart = new Chart(donutCtx).Doughnut([{ value: 101342, color: '#1fc8f8' }, { value: 55342, color: '#76a346' }], { percentageInnerCutout: 50, animateScale: true, segmentShowStroke: false, animateRotate: false });
+
+var data = {
+  labels: ['12/12/2013','13/12/2013','14/12/2013','14/12/2013','15/12/2013','16/12/2013','17/12/2013'],
+   datasets: [
+     { data: [100,210,220,300,200,190,192], fillColor: 'rgba(31,200,248,0.1)', strokeColor: '#1fc8f8', pointColor: '#1fc8f8', pointStrokeColor: '#1fc8f8' },
+     { data: [130,200,190,150,140,210,0], fillColor: 'rgba(118,163,70,0.1)', strokeColor: '#76a346', pointColor: '#76a346', pointStrokeColor: '#76a346' }
+    ]
+};
+
+var line = document.getElementById('line');
+var lineCtx = line.getContext('2d');
+var chart1 = new Chart(lineCtx).Line(data);
+
+var line2 = document.getElementById('line2');
+var line2Ctx = line2.getContext('2d');
+var chart2 = new Chart(line2Ctx).Line(data);
+      //# sourceURL=pen.js
+    </script>
+<script src="https://static.codepen.io/assets/editor/live/css_reload-5619dc0905a68b2e6298901de54f73cefe4e079f65a75406858d92924b4938bf.js"></script>
+</body>
+</html>
