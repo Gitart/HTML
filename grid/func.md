@@ -1,3 +1,4 @@
+```js
 function actualizar(id){
   // Quita el modal
   $('.bs-modal').modal('hide');
@@ -14,3 +15,4 @@ function actualizar(id){
 
         }
     });
+```
