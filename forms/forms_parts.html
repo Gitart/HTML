@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>DataTables example - HTML (DOM) sourced data</title>
+	<link rel="shortcut icon" type="image/png" href="/media/images/favicon.png">
+	
+
+
+	
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/dataTables.semanticui.min.css">
+    
+
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/dataTables.semanticui.min.js"></script>
+    <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+    <script type="text/javascript" language="javascript" src="js/main.js"></script>
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+        .heads {font-weight: bold; color: #2C3E50; font-size: 14px;}
+        body {font-family: 'Open Sans', sans-serif;}
+        /*#example tbody>th:nth-child(2){ background: yellow;}*/
+
+        #example    td:nth-child(7){font-weight: bold; text-align: center;}
+        #example    td:nth-child(8){font-weight: bold; text-align: right;}
+        #example    td:nth-child(9){font-weight: bold; text-align: right;}
+        #example    td:nth-child(10){font-weight: bold; text-align: right;}
+
+        #example   tfoot th:nth-child(1){ text-align: right;}
+        #example   tfoot th:nth-child(2){font-weight: bold; text-align: center;}
+        #example   tfoot th:nth-child(3){font-weight: bold; text-align: right;}
+        #example   tfoot th:nth-child(4){font-weight: bold; text-align: right; color: #A569BD;}
+        #example   tfoot th:nth-child(5){font-weight: bold; text-align: right; color: #943126;}
+
+        
+        #example2    td:nth-child(1){text-align: center;}
+        #example2    td:nth-child(2){font-weight: bold; text-align: center;}
+        #example2    td:nth-child(3){text-align: center;}
+        #example2    td:nth-child(4){font-weight: bold; text-align: right;}
+        #example2    td:nth-child(5){font-weight: bold; text-align: right;}
+        #example2    td:nth-child(6){font-weight: bold; text-align: center;}
+        #example2    td:nth-child(7){font-weight: bold; text-align: right;}
+        #example2    td:nth-child(8){font-weight: bold; text-align: center;}
+        
+        
+
+        #example2   tfoot th:nth-child(1){ text-align: right;}
+        #example2   tfoot th:nth-child(2){font-weight: bold; text-align: right;}
+        #example2   tfoot th:nth-child(3){font-weight: bold; text-align: right;}
+        #example2   tfoot th:nth-child(4){font-weight: bold; text-align: right; color: #A569BD;}
+        #example2   tfoot th:nth-child(5){font-weight: bold; text-align: right; color: #943126;}
+
+    </style>
+
+
+	<script type="text/javascript" class="init">
+	             $(document).ready(function() {$('#example').DataTable();} );
+	</script>
+</head>
+
+
+<body class="wide comments example">
+
+<div class="ui container">
+
+<h2 style="font-weight:bold">ЖУРНАЛ ОРДЕРОВ </h2>
+
+
+
+
+<table id="ex1"  class="ui  table dataTable" style="width:200px;">
+        <thead>
+            <tr>
+                <th style="text-align: center">В работе</th>
+                <th style="text-align: center">Всего</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="text-align: center">10</td>
+                <td style="text-align: center">124</td>
+            </tr>
+        </tbody>
+</table>
+<br>            
+
+<button class="ui secondary button">Добавить новый ордер</button>            
+<button class="ui secondary button">Создать из файла</button> 
+<br>
+<br>
+
+
+
+
+
+<table id="example" class="ui celled table dataTable stackable" style="width:100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Номер</th>
+                <th>Дата</th>
+                <th>Тип</th>
+                <th>Контрагент</th>
+                <th>Статус</th>
+                <th>Кол-во</th>
+                <th>Цена,Евро</th>
+                <th>Цена,грн</th>
+                <th>Сумма, грн</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>   <td>A-0012</td>    <td>02.03.2020</td>  <td>Приход</td>    <td>Rotex</td>  <td>Новый</td>                                  <td>5</td>    <td>32.91</td>   <td>632.91</td>   <td>1 800.91</td>    </tr>
+                <td>2</td>   <td>A-0015</td>    <td>05.03.2020</td>  <td>Приход</td>    <td>Rotex</td>  <td>Новый</td>                                  <td>8</td>    <td>132.14</td>  <td>632.91</td>   <td>1 800.91</td>    </tr>
+                <td>3</td>   <td>A-0017</td>    <td>06.03.2020</td>  <td>Расход</td>    <td>Степаненко Андрей</td>  <td>Откланен</td>                   <td>19</td>   <td>562.12</td>  <td>632.91</td>   <td>1 800.91</td>    </tr>
+                <td>4</td>   <td>A-0117</td>    <td>07.07.2020</td>  <td>Приход</td>    <td>Rotex</td>  <td> <div class="ui teal  label">Ожидание</div> <td>219</td>  <td>562.12</td>  <td>632.91</td>   <td>1 800.91</td>    </tr>
+
+        </tbody>
+        <tfoot>
+
+           <tr>
+                
+                <th colspan="6">Всего</th>
+                <th>23</th>
+                <th>5 3456.45</th>
+                <th>3 456.45</th>
+                <th>7 3456.45</th>
+
+            </tr>
+        </tfoot>
+    </table>
+
+    <br><br>
+ 
+
+
+
+
+<h2 class="ui dividing " style="font-weight:bold">ORDER № 23456677 </h2>
+
+<hr>
+
+<table class="ui very basic table">
+  <tbody>
+    <tr>  <td>Создано</td>                <td class="heads">04.02.2020</td>    <td></td> <td>Статус</td>      <td class="heads">Обработан</td>                </tr>
+    <tr>  <td>Количество позиций</td>     <td class="heads">15</td>            <td></td> <td>Получатель</td>  <td class="heads">Авдеев Андрей</td>            </tr>
+    <tr>  <td>Сумма, грн</td>             <td class="heads">4 567.78</td>      <td></td> <td>Тип</td>         <td class="heads">Приход</td>                   </tr>
+    <tr>  <td>Сумма, eur</td>             <td class="heads">34 467.82</td>     <td></td> <td>Примечание</td>  <td class="heads">Отправка задерживается</td>   </tr>
+  </tbody>
+</table>
+
+
+ <button class="ui primary button"> <i class="plus icon"></i> Добавить деталь</button>
+ 
+ <h3 class="ui dividing " style="font-weight:bold">Позиции в ордере </h3>
+
+<table id="example2" class="ui celled table dataTable stackable" style="width:100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Бренд</th>
+                <th>Код</th>
+                <th>Цена, eur</th>
+                <th>Цена, грн</th>
+                <th>Кол-во</th>
+                <th>Сумма, грн</th>
+                <th>Удаление</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td> <td>BMW</td> <td>A-02303-231</td> <td>32.91</td>   <td>632.91</td> <td>5</td>    <td>1 800.91</td> <td><button class="mini ui button red"><i class="window close outline icon"></i> </button></td> </tr>
+                <td>2</td> <td>BMW</td> <td>A-02303-232</td> <td>132.14</td>  <td>632.91</td> <td>8</td>    <td>1 800.91</td> <td><button class="mini ui button red"><i class="window close outline icon"></i>  </button></td> </tr>
+                <td>3</td> <td>BMW</td> <td>A-02303-234</td> <td>562.12</td>  <td>632.91</td> <td>19</td>   <td>1 800.91</td> <td><button class="mini ui button red"><i class="window close outline icon"></i>  </button></td> </tr>
+                <td>4</td> <td>BMW</td> <td>A-02303-237</td> <td>562.12</td>  <td>632.91</td> <td>219</td>  <td>1 800.91</td> <td><button class="mini ui button red"><i class="window close outline icon"></i>  </button></td> </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+            <th colspan="3">Всего</th>
+                <th>5 123.23</th>
+                <th>5 3456.45</th>
+                <th>3 456.45</th>
+                <th>7 3456.45</th>
+                <th></th>
+
+            </tr>
+        </tfoot>
+    </table>
+
+    <br>
+    <div style="text-align: right;">
+         <button class="ui primary button">  Cохранить </button>
+         <button class="ui button">  Отмена </button>
+    </div>     
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</body>
+</html>
