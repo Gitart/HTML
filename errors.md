@@ -1,6 +1,6 @@
 # Коды всех ошибок
 
-[Школа хостинга](https://ru.hostings.info/schools) Редактор: [Марина Долгова](https://ru.hostings.info/worker/5) ![](https://ru.hostings.info/assets/img/eye-black.png) 34527   ![](https://ru.hostings.info/assets/img/time-black.png) 6 мин    Аудио
+[Школа хостинга](https://ru.hostings.info/schools)  ![](https://ru.hostings.info/assets/img/eye-black.png) 34527   ![](https://ru.hostings.info/assets/img/time-black.png) 6 мин    Аудио
 
 ## Что такое коды ответов и ошибок сервера?
 
