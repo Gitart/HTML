@@ -71,6 +71,8 @@ function openCenteredWindow(url) {
 ```
 
 ### Html form
+Количество полей должно сопадать с оперделенными полями в JS
+
 
 ```html
 <!DOCTYPE html>
