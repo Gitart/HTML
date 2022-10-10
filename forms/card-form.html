@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+<title>Product card UI design</title>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<link rel="stylesheet" type="text/css" href="./Product card UI design_files/bootstrap.min.css">
+<link rel="stylesheet" href="./Product card UI design_files/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="./Product card UI design_files/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.0/css/all.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<style type="text/css">
+body {
+    font-size: 15px;
+    font-family: 'Inter Tight';
+}
+
+.fnt22 {
+    font-family: 'Inter';
+}
+
+.ddflex {
+    font-size: 30px;
+    color: #ccc;
+}
+
+.mbut {
+    font-size: 40px;
+
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.3);
+    color: #273746;
+    border: 2px solid #F1F1F1;
+    padding: 10px;
+    display: inline-block;
+    text-align: center;
+    height: 80px;
+    width: 80px;
+    border-radius: 3px;
+    margin: 4px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    --animate-delay: 1s;
+    transition-duration: 0;
+
+    /*transform: translate(-50%, -50%);*/
+    transition-duration: var(--button-transition-duration);
+    transition-property: color background border box-shadow;
+    transition-timing-function: ease-in;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+}
+
+
+
+.mbut:hover {
+    color: red;
+    font-weight: 800;
+    cursor: pointer;
+    background-color: #FDF69F;
+    animation: flash;
+    /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 2s;
+}
+
+
+.mbut::after {
+
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 100%;
+    padding-left: 100%;
+    margin-left: 0px !important;
+    margin-top: -100%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+
+.mbut:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+</style>
+
+
+
+<style type="text/css" media="screen">
+			.project-title {
+				position: absolute;
+				left: 25px;
+				bottom: 8px;
+
+				font-size: 16px;
+				color: #444;
+			}
+
+			.credits {
+				position: absolute;
+				right: 20px;
+				bottom: 25px;
+				font-size: 15px;
+				z-index: 20;
+				color: #444;
+				vertical-align: middle;
+			}
+
+			.credits * + * {
+				margin-left: 15px;
+			}
+
+			.credits a {
+				padding: 8px 10px;
+				color: #444;
+				border: 2px solid #999;
+				text-decoration: none;
+			}
+
+			.credits a:hover {
+				border-color: #555;
+				color: #222;
+			}
+
+			@media screen and (max-width: 1040px) {
+				.project-title {
+					display: none;
+				}
+
+				.credits {
+					width: 100%;
+					left: 0;
+					right: auto;
+					bottom: 0;
+					padding: 30px 0;
+					background: #ddd;
+					text-align: center;
+				}
+
+				.credits a {
+					display: inline-block;
+					margin-top: 7px;
+					margin-bottom: 7px;
+				}
+			}
+
+
+			.btn {
+				border-radius: 5px;
+			}
+		</style>
+</head>
+<body>
+
+	
+	
+
+
+	<section class="section-100">
+			<div class="container">
+
+<h4>Настройка и установка</h4>
+<div class="mbut"> <i class="fas fa-glass-cheers"></i> </div>
+<div class="mbut"> <i class="fas fa-unlock-alt"></i> </div>
+<div class="mbut"> <i class="fas fa-tags"></i> </div>
+<div class="mbut"> <i class="fas fa-unlock-alt"></i> </div>
+<div class="mbut"> <i class="fas fa-unlock-alt"></i> </div>
+<div class="mbut"> <i class="fas fa-unlock-alt"></i> </div>
+<div class="mbut">📙</div>
+<div class="mbut">⚙️</div>
+<div class="mbut">😼</div>
+<div class="mbut">🤖</div>
+<div class="mbut">💵</div>
+<div class="mbut">📦</div>
+<div class="mbut">🏷️</div>
+<div class="mbut">🔑</div>
+<div class="mbut">⚠️</div>
+<div class="mbut">📤</div>
+<div class="mbut">💡</div>
+<div class="mbut">📗</div>
+<div class="mbut">👥</div>
+<hr>
+
+
+               <a class="btn btn-lg btn-outline-primary" 
+                    href="https://fontawesome.com/v5/icons/paper-plane?s=solid&f=classic "><i class="fas fa-unlock-alt"></i> Здесь брал картинки</a>
+
+              <br>      <br><br><br>
+
+
+           <div class="ddflex">
+            	<button type="button" class="btn btn-lg btn-outline-primary">📗 Система</button>
+            	<button type="button" class="btn btn-lg btn-outline-primary">😼 Справочники</button>
+            	<button type="button" class="btn btn-lg btn-secondary"><i class="fas fa-glass-cheers"></i> Настройка</button>
+            	<button type="button" class="btn btn-lg btn-outline-secondary"><i class="fas fa-glass-cheers"></i> Дополнительно</button>
+            </div>	
+            <br>
+
+
+
+
+            <div class="ddflex">
+            	<button type="button" class="btn btn-lg btn-outline-primary"><i class="fas fa-users-cog"></i> Система</button>
+            	<button type="button" class="btn btn-lg btn-outline-primary"><i class="fas fa-glass-cheers"></i> Справочники</button>
+            	<button type="button" class="btn btn-lg btn-secondary"><i class="fas fa-glass-cheers"></i> Настройка</button>
+            	<button type="button" class="btn btn-lg btn-outline-secondary"><i class="fas fa-glass-cheers"></i> Дополнительно</button>
+            </div>	
+            <br>
+
+			<div class="row">
+
+				<div class="col-md-8 offset-md-2 fnt22">
+					<div class="product-card bg-white mb-4 overflow-hidden d-lg-flex rounded-lg position-relative">
+						<div class="product-image overflow-hidden d-flex align-items-center m-4">
+							<img src="./Product card UI design_files/product2.jpg" alt="" class="product-thumbnail rounded-lg">
+						</div>
+						<div class="py-4 pr-4 pl-4 pl-lg-0 product-details">
+							<h4 class="font-weight-bold d-flex justify-content-between">
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="text-dark" title="Elegant designed coffee plant for desktop decoration">
+									Новости технологий
+								</a>
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="ml-2 text-muted"><i class="fa fa-heart-o"></i></a>
+							</h4>
+
+							<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="text-uppercase py-0 px-2 rounded-lg border mb-2 d-inline-block">
+								<small class="font-weight-bold">Оформление</small>
+							</a>
+
+							<div class="d-flex align-items-center mb-2">
+								<div class="rating-stars">
+									<img src="./Product card UI design_files/grey-star.svg" alt="">
+									<div class="filled-star" style="width:86%"></div>
+								</div>
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="ml-2 text-muted">(245)</a>
+							</div>
+
+							<div class="d-flex align-items-baseline mb-2">
+								<h2 class="mr-2">$15.99</h2>
+								<h5 class="text-striked text-muted mr-3 font-weight-regular">$20</h5>
+								<h5 class="text-success">42% off</h5>
+							</div>
+
+							<ul class="text-muted pl-3">
+								<li>Пример для написания примерного кода </li>
+								<li>Incidunt, ullam, reprehenderit? Praesentium doloribus soluta, quia.</li>
+							</ul>
+							<button class="btn btn-outline-primary">Add to cart</button>
+						</div>
+					</div>
+				</div>
+
+
+                <div class="col-md-8 offset-md-2">
+					<div class="product-card bg-white mb-4 overflow-hidden d-lg-flex rounded-lg position-relative">
+						
+						<div class="product-image overflow-hidden d-flex align-items-center m-4">
+							<img src="./Product card UI design_files/product2.jpg" alt="" class="product-thumbnail rounded-lg">
+						</div>
+
+                        <div class="py-4 pr-4 pl-4 pl-lg-0 product-details">
+                        	<h4 class="font-weight-bold d-flex justify-content-between">
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="text-dark" title="Elegant designed coffee plant for desktop decoration">
+									Пример для написания примерного кода
+								</a>
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="ml-2 text-muted"><i class="fa fa-heart-o"></i></a>
+							</h4>
+
+
+                        	Пример для написания примерного кода
+
+                             <div class="d-flex align-items-center mb-2">
+								<div class="rating-stars">
+									<img src="./Product card UI design_files/grey-star.svg" alt="">
+									<div class="filled-star" style="width:86%"></div>
+								</div>
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="ml-2 text-muted">(245)</a>
+							</div>
+
+							<div class="d-flex align-items-baseline mb-2">
+								<h2 class="mr-2">$15.99</h2>
+								<h5 class="text-striked text-muted mr-3 font-weight-regular">$20</h5>
+								<h5 class="text-success">42% off</h5>
+							</div>
+                        </div>	
+
+
+					</div>
+				</div>
+
+
+
+
+
+                 <div class="col-md-8 offset-md-2">
+					<div class="product-card bg-white mb-4 overflow-hidden d-lg-flex rounded-lg position-relative">
+						
+						<div class="product-image overflow-hidden d-flex align-items-center m-4">
+							<img src="./Product card UI design_files/product2.jpg" alt="" class="product-thumbnail rounded-lg">
+						</div>
+
+                        <div class="py-4 pr-4 pl-4 pl-lg-0 product-details">
+                        	<h4 class="font-weight-bold d-flex justify-content-between">
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="text-dark" title="Elegant designed coffee plant for desktop decoration">
+									Пример для написания примерного кода
+								</a>
+								<a href="https://kiranworkspace.com/demo/projects/code-snippets/ecommerce/product-card/#!" class="ml-2 text-muted"><i class="fa fa-heart-o"></i></a>
+							</h4>
+							
+                        	Пример для написания примерного кода
+                            Пример для написания примерного кода
+                        </div>	
+
+					</div>
+				</div>
+			</div>
+
+
+<div class="container text-center">
+  <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+    <div class="col">    <div class="p-3 border bg-light">📙 Пример создания    </div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Створення </div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Новость   </div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Творчесть </div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Настройки </div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Область   </div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Система   </div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Настройка</div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Справочники</div>   </div>
+    <div class="col">    <div class="p-3 border bg-light">📙 Прочее..</div>   </div>
+  </div>
+</div>
+
+
+
+</div>
+<section>
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+
+</body>
+</html>
