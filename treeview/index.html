@@ -1,0 +1,282 @@
+<html>
+<head>
+
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+
+<style type="text/css">
+	  .bodis {font-family: 'Roboto', sans-serif;}
+
+	  body{font-family: 'Source Sans Pro', sans-serif;}
+
+</style>
+
+
+<style type="text/css">
+    .treeview           { padding: 0; clear: both; font-family: Arial, sans-serif; width: 100%; }
+    .treeview *         { font-size: 100.1%; }
+    .treeview ul        { overflow: hidden; width: 100%; margin: 0; padding: 0 0 1.5em 0;   list-style-type: none;}
+    .treeview ul ul     { overflow: visible; width: auto; margin: 0 0 0 0; padding: 0 0 0 0.75em; }
+
+    /* êëàññ äëÿ ul ïîñëå êîòîðûõ íåò li â ðîäèòåëüñêèõ âåòêàõ */
+    .treeview ul.l      { border-left: 1px solid; margin-left: -1px; }
+    .treeview li.cl ul  { display: none; }
+    .treeview li        { margin: 0; padding: 0; }
+    .treeview li li     { margin: 0 0 0 0.5em; border-left: 1px dotted; padding: 0; }
+    .treeview li div    { position: relative; height: 1.5em; min-height: 16px; //height: 1.3em; }
+    .treeview li li div { border-bottom: 1px dotted; }
+    .treeview li p      { position: absolute; z-index: 1; top: 0.8em; //top: 0.65em; left: 1.75em; width: 100%; margin: 0; border-bottom: 1px dashed; padding: 0;}
+    .treeview a         { padding: 0.1em 0.2em; white-space: nowrap; //height: 1px; text-decoration: none; font-weight: bold; }
+    .treeview img.i     { border-right: 2px solid; border-bottom: 0.5em solid;  margin-bottom: -0.5em; vertical-align: middle;}
+    .treeview a.sc      { position: absolute; top: 0.06em;    margin-left: -1em; padding: 0; text-decoration: none; }
+
+    /* colors */
+    .treeview li p,
+    .treeview img.i,
+    .treeview .sc           {background: #F8F8F8;}
+    .treeview ul.l,
+    .treeview li p,
+    .treeview img.i         {border-color: #f5f5ea;}
+    .treeview ul li li,
+    .treeview ul li li div  {border-color: #999999;}
+    .treeview a,
+    .treeview a.sc,
+    .treeview a.sc:hover    {color: #000000;}
+    .treeview a:hover       {color: #cc0000;}
+</style>
+
+<script type="text/javascript">
+    function UnHide( eThis ){
+        if( eThis.innerHTML.charCodeAt(0) == 9658 ){
+            eThis.innerHTML = '&#9660;'
+            eThis.parentNode.parentNode.parentNode.className = '';
+        }else{
+            eThis.innerHTML = '&#9658;'
+            eThis.parentNode.parentNode.parentNode.className = 'cl';
+        }
+        return false;
+    }
+</script>
+</head>
+
+<body>
+
+<h3>Основное меню</h3>
+<div style="width:25%; border: 1px solid #ccc; border-radius: 5px; background-color: #F8F8f8;">
+
+<div class="treeview">
+    <ul>
+        <li>
+            <div>
+            	<p>
+            	<a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                <a href="#">Группы</a>
+                </p>
+            </div>
+
+            
+            <ul>
+                <li class="cl">
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#"> Запчасти для ТО</a>
+                        </p>
+                    </div>
+                    <ul>
+                        
+                        <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#"> Фильтры</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+				                        <li><div><p><a href="#"><img src="i-photoshop.gif"   class="i" /> Воздушный фильтр</a></p></div></li>
+                                        <li><div><p><a href="#"><img src="i-illustrator.gif" class="i" /> Масляный фильтр</a></p></div></li>
+                                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Топливный фильтр</a></p></div>
+                                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Фильтр салона</a></p></div>
+				                    </ul>
+				        </li>
+
+
+
+                        <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#"> Подвеска</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Амортизатор</a></p></div>	
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Рулевая тяга и наконечник</a></p></div>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Рычаги и шаровые опоры</a></p></div>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Сайлентблоки</a></p></div></li>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Стабилизатор</a></p></div></li>
+				                    </ul>
+				        </li>
+
+
+
+                        <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#"> Тормозная система</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+
+					                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Тормозной диск</a></p></div></li>
+					                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Тормозные колодки</a></p></div></li>
+					                </ul>
+				        </li>
+
+
+                        <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#"> Автомобильные масла</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Моторное масло</a></p></div></li>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Трансмиссионное масло</a></p></div></li>
+					                </ul>
+				        </li>
+
+
+                        <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#"> Система зажигания и электрика</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+					                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Автомобильные аккумуляторы</a></p></div></li>
+					                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Свечи зажигания</a></p></div></li>
+					                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Свечи накала</a></p></div></li>
+					                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Свечные провода</a></p></div></li>
+					                </ul>
+				        </li>
+
+
+                        <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#"> Ременные приводы</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Комплект ремня ГРМ (ремень, ролики)</a></p></div></li>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Приводной ремень</a></p></div></li>
+				                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Ремень ГРМ</a></p></div></li>
+					                </ul>
+				        </li>
+
+
+
+                        <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#"> Технические жидкости</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+			                         <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Антифриз</a></p></div></li>
+			                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Дистиллированная вода</a></p></div></li>
+			                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Тормозная жидкость</a></p></div></li>
+			                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Система очистки стекол</a></p></div></li>
+			                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Омыватели</a></p></div></li>
+			                        <li><div><p><a href="#"><img src="i-indesign.gif"    class="i" /> Щетки стеклоочистителя</a></p></div></li>					               
+			                        </ul>
+				        </li>
+                        </li>
+                    </ul>
+                </li>
+                
+
+                <li class="cl">
+                	<div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#">Освещение</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p><a href="#"><img src="i-word.gif"   class="i" /> Автолампы</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Вcтавка основной фары</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Внутреннее освещение</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Вставка противотуманной фары</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Дневные ходовые огни</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Задний фонарь</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Задняя противотуманная фара</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Комплект противотуманных фар</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Лампа фонаря освещения номерного знака</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Основная фара</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Передняя противотуманная фара</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Рассеиватель фары</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Фонарь указателя поворота</a></p></div></li>
+
+                    </ul>
+                </li>
+
+
+                 <li class="cl">
+                	<div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                            <a href="#"> Зажигание</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li><div><p><a href="#"><img src="i-word.gif"   class="i" /> Вилка свечи накаливания</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" /> Катушка зажигания</a></p></div></li>
+                        <li><div><p><a href="#"><img src="i-explorer.gif"   class="i" /> Контактная группа распределителя зажигания</a></p></div></li>
+                        <li><div> <p>  <a href="#"><img src="i-firefox.gif" class="i" /> Модуль зажигания</a></p></div></li>
+                        <li><div> <p> <a href="#"><img src="i-opera.gif"    class="i" /> Распределитель зажигания</a> </p></div></li>
+                        <li><div><p><a href="#"><img src="i-explorer.gif"   class="i" /> Свечи зажигания</a></p></div></li>
+                        <li><div> <p>  <a href="#"><img src="i-firefox.gif" class="i" /> Свечи накала</a></p></div></li>
+                        <li><div> <p> <a href="#"><img src="i-opera.gif"    class="i" /> Свечные провода</a> </p></div></li>
+
+				                  <li class="cl">
+				                	<div>
+				                        <p>
+				                            <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+				                            <a href="#">Microsoft Office</a>
+				                        </p>
+				                    </div>
+				                    <ul>
+				                        <li><div><p><a href="#"><img src="world.png"   class="i" />Word</a></p></div></li>
+				                        <li><div><p><a href="#"><img src="i-excel.gif"  class="i" />Excel</a></p></div></li>
+				                    </ul>
+				                </li>
+                    </ul>
+                </li>
+
+                <li><div><p><a href="#"><img src="cloud.png"   class="i" />Прочее</a></p></div></li>
+                <li><div><p><a href="#"><img src="cloud.png"   class="i" />Комплект для ТО</a></p></div></li>
+<!-- 
+                <li><div><p><a href="#"><img src="i-explorer.gif"   class="i" />Internet Explorer</a></p></div></li>
+                <li><div> <p>  <a href="#"><img src="i-firefox.gif" class="i" />Mozilla Firefox</a></p></div></li>
+                <li><div> <p> <a href="#"><img src="i-opera.gif"    class="i" />Opera</a> </p></div></li>
+                <li><div><p><a href="#"><img src="i-explorer.gif"   class="i" />Internet Explorer</a></p></div></li>
+                <li><div> <p>  <a href="#"><img src="i-firefox.gif" class="i" />Mozilla Firefox</a></p></div></li>
+                <li><div> <p> <a href="#"><img src="i-opera.gif"    class="i" />Opera</a> </p></div></li>
+ -->
+
+            </ul>
+        </li>
+    </ul>
+</div>
+</div>
+</body>
+</html>
