@@ -1,0 +1,68 @@
+<html>
+<head>
+<style>
+  
+  body{background-color:#f0f2f5; }
+  
+@media (min-width: 800px) {
+    .wrapper {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        grid-gap: 16px;
+    }
+    
+    aside {
+        align-self: start;
+    }
+}
+
+ 
+ /*Центрирование div на странце*/
+.hero {
+  
+    margin: auto;   /*Выравнивание по горизонтали*/
+    justify-content: center;
+    width: 500px;
+    border-radius: 5px; 
+    border: 2px solid #ccc; 
+    height: 200px;
+    background-color:  white; 
+    display: flex;              /* центрирует элементы по вертикали */
+    flex-direction: column;
+    align-items: center;        /* центрирует элементы по горизонтали */
+    justify-content: center;    /* центрирует элементы по вертикали */
+    text-align: center;
+    /*display: table-cell;*/
+    vertical-align: middle ;
+
+    /*Vertical*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="contain">
+
+
+<div class="hero">
+  Пример Героя для просомтра 
+   <p><b>Note: </b>Using margin:auto will not work in IE8, unless a !DOCTYPE is declared.</p>
+</div>  
+
+
+
+<div class="wrapper">
+    <aside>Sidebar</aside>
+    <main>Main</main>
+</div>
+
+</body>
+</html>
