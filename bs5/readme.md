@@ -704,6 +704,7 @@ Sit et vero kasd sea et at, aliquyam takimata et et est, labore et takimata sed 
 ```
 
 ## Left menu
+![image](https://github.com/Gitart/HTML/assets/3950155/69434907-6c32-4f77-b3cd-16a07b485f51)
 
 ```html
 <div class="sidebar pe-4 pb-3">
