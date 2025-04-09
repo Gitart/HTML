@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modal with Active Icon</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    table {
+      width: 100%!important;
+    }
+    
+    .icon-row {
+      display: flex;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .icon-btn {
+      flex: 1;
+      text-align: center;
+      padding: 12px;
+      border-right: 1px solid #ddd;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .icon-btn:last-child {
+      border-right: none;
+    }
+
+    .icon-btn.active-icon {
+      background-color: #0797bb;
+    }
+
+    .content-body {
+      display: flex;
+      padding: 15px;
+    }
+
+    .content-body .icon {
+       
+      font-size: 30px;
+      margin-right: 20px;
+      vertical-align: middle;
+      color:rgb(34, 21, 21);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Trigger -->
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#customModal">Открыть</button>
+
+<!-- Modal -->
+<div class="modal fade" id="customModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">
+            <i class="far fa-star"></i>
+            Пользовательские настройки
+        </h5>
+        <button type="button" class="btn-close" 
+            data-bs-dismiss="modal">
+        </button>
+      </div>
+
+      <div class="icon-row" id="iconRow">
+        <button class="icon-btn active-icon border" onclick="loadContent(0, this)"><i class="fas fa-star"></i></button>
+        <button class="icon-btn border" onclick="loadContent(1, this)"><i class="far fa-star"></i></button>
+        <button class="icon-btn border" onclick="loadContent(2, this)"><i class="far fa-square"></i></button>
+        <button class="icon-btn border" onclick="loadContent(3, this)"><i class="fas fa-user"></i></button>
+        <button class="icon-btn border" onclick="loadContent(4, this)"><i class="fas fa-user"></i></button>
+      </div>
+
+      <div class="content-body" id="modalContent">
+        <div class="icon"><i class="fas fa-star"></i></div>
+        <div>
+          <h5>Избранное</h5>
+          <p>Тут находятся твои избранные элементы.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const contents = [
+    {
+      icon: '<i class="fas fa-star"></i>',
+      title: 'Избранное',
+      desc: 'Тут находятся твои избранные элементы.'
+    },
+    {
+      icon: '<i class="far fa-star"></i>',
+      title: 'Помечено',
+      desc: 'Элементы, которые ты отметил звездочкой.'
+    },
+    {
+      icon: '<i class="far fa-square"></i>',
+      title: 'Блоки',
+      desc: `<table class="table" style="width: 100%!important;">
+                <tr><th >Название</th><td>Имя</td></tr>
+                <tr><th>Фамилия</th><td>Иван</td></tr>
+                <tr><th >Имя</th><td>Имя</td></tr>
+                <tr><th>Отчество</th><td>Иван</td></tr>
+             </table>`
+    },
+    {
+      icon: '<i class="fas fa-user"></i>',
+      title: 'Профиль',
+      desc: 'Информация о тебе, редактирование профиля.'
+    },
+    {
+      icon: '<i class="far fa-square"></i>',
+      title: 'Прочие объекты',
+      desc: 'Change the alignment of elements with the vertical-alignment utilities. Please note that vertical-align only affects inline, inline-block, inline-table, and table cell elements.'
+    }
+  ];
+
+  function loadContent(index, btn) {
+    // Смена контента
+    const content = contents[index];
+    document.getElementById("modalContent").innerHTML = `
+      <div class="icon">${content.icon}</div>
+      <div>
+        <h5>${content.title}</h5>
+        <p>${content.desc}</p>
+      </div>
+    `;
+
+    // Удаляем активные классы у всех кнопок
+    document.querySelectorAll('.icon-btn').
+             forEach(el => el.classList.remove('active-icon'));
+    // Добавляем активный класс на текущую
+    btn.classList.add('active-icon');
+  }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
