@@ -7,17 +7,6 @@ Grid — один из самых мощных модулей CSS. Он нуже
 
 
 
-![](https://highload.tech/wp-content/themes/supermc/templates/banner-agency/logo-agency.svg)
-
-![](https://highload.tech/wp-content/themes/supermc/templates/banner-agency/check.svg) PR для компаній та їх лідерів
-
-![](https://highload.tech/wp-content/themes/supermc/templates/banner-agency/check.svg) Організація інтерв’ю в медіа, подкастах, виступи на конференціях
-
-![](https://highload.tech/wp-content/themes/supermc/templates/banner-agency/check.svg) Європа, Азія, Америка
-
-[Дізнатись деталі ![](https://highload.tech/wp-content/themes/supermc/templates/banner-agency/arrow.svg)](https://the-creators.agency/ua/?utm_source=vidget\&utm_medium=Highload)
-
-![](https://highload.tech/wp-content/themes/supermc/templates/banner-agency/logo-agency.svg)
 
 **Содержание статьи:**
 
