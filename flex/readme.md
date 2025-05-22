@@ -34,20 +34,9 @@ CSS Flexbox помогает разработать сложный дизайн 
 </div>
 ```
 
-Теперь добавим несколько свойств CSS, чтобы преобразовать этот блок во Flexbox и немного стилизовать:
-
-Plain text
-
-Copy to clipboard
-
-Open code in new window
-
-EnlighterJS 3 Syntax Highlighter
-
+```css
 .flex-container{
-
 display: flex;
-
 background-color: #f7941d;
 
 margin: 20px;
@@ -69,6 +58,7 @@ margin: 10px;
 border: 1px solid grey;
 
 }
+```
 
 .flex-container{ display: flex; background-color: #f7941d; margin: 20px; justify-content: center; } .flex-container > div{ color: white; padding: 40px; background-color: #c597ec; margin: 10px; border: 1px solid grey; }
 
@@ -91,25 +81,7 @@ border: 1px solid grey;
 Результат:
 
 [![Основы CSS-верстки: как с помощью Flexbox компоновать элементы на странице](https://highload.tech/wp-content/uploads/2021/10/image11.png)](https://highload.tech/wp-content/uploads/2021/10/image11.png)
-
-Оранжевый блок— это flex-контейнер, а фиолетовые блоки — flex-элементы
-
-Разберем все более подробно.
-
-В приведенном выше примере внешняя область оранжевого цвета, которую мы создали с помощью элемента
-
-\<div>
-
-`<div>`, называется **гибким контейнером (flex-контейнером)**. А внутренние элементы
-
-\<div>
-
-`<div>` фиолетового цвета называются **flex-элементами**.
-
-Стоит отметить, что свойство
-
 display: flex
-
 `display: flex` применяется только к родительским элементам, в этом случае родительский элемент — это наш гибкий оранжевый контейнер. А блоки в этом контейнере — его дочерние элементы.
 
 ## Почему Flexbox?
@@ -123,21 +95,15 @@ display: flex
 ## Свойства flex-контейнера
 
 Существует шесть основных CSS-свойств для работы с flex-контейнером:
-
 * flex-direction
-
   `flex-direction`;
 * flex-wrap
-
   `flex-wrap`;
 * flex-flow
-
   `flex-flow`;
 * justify-content
-
   `justify-content`;
 * align-items
-
   `align-items`;
 * align-content
 
