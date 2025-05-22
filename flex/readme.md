@@ -148,162 +148,31 @@ display: flex
 ### Flex-direction
 Мы уже говорили о направлении главной оси по умолчанию (слева-направо) — это не строгое правило. Направлением можно управлять, то есть переопределять расположение гибких блоков с помощью свойства
 
-flex-direction
-
 ![flex-direction:row](https://highload.tech/wp-content/uploads/2021/10/image28.png)
-
-row-reverse
-
-`row-reverse`: при таком значении строка переворачивается и flex-элементы становятся в обратном порядке, теперь уже справа налево:
 ![flex-direction:row-reverse](https://highload.tech/wp-content/uploads/2021/10/image14.png)
-
-Свойство flex-direction: row-reverse выстраивает элементы справа налево
-column
 ![flex-direction: column](https://highload.tech/wp-content/uploads/2021/10/image1.png)
-
-Свойство flex-direction: column располагает элементы сверху вниз
-
-column-reverse
 ![flex-direction: column-reverse](https://highload.tech/wp-content/uploads/2021/10/image24.png)
-Свойство flex-direction: column-reverse переворачивает столбик
-
-### Flex-wrap
-Используя это свойство, не поместившиеся в одну линию элементы можно переместить на следующую строчку. Это полезно применять в адаптивных макетах, когда при изменении размера экрана гибкие элементы автоматически меняют свое положение. По умолчанию для параметра
-
-
 ![flex-wrap: wrap](https://highload.tech/wp-content/uploads/2021/10/image2.png)
-nowrap
-
 ![flex-wrap: nowrap](https://highload.tech/wp-content/uploads/2021/10/image4.png)
-Свойство flex-wrap: nowrap — элементы могут выйти за границы контейнера
-Если ничего не менять и оставить значение по умолчанию, элементы выстроятся в одну строку и, возможно, выйдут за границы контейнера, что и случилось на изображении выше.
-
-wrap-reverse
 ![flex-wrap: wrap-reverse](https://highload.tech/wp-content/uploads/2021/10/image27.png)
-Свойство flex-wrap: wrap-reverse зеркально отразит элементы
-Такое значение понадобится, если мы захотим перенести блоки на другую строчку, но в обратном порядке. Так получится зеркальное отражение, прямо как в нашем примере.
-
-### Flex-flow
-flex-flow
-flex-direction
-
 ![Свойства пишутся через пробел](https://highload.tech/wp-content/uploads/2021/10/image17.png)
-
-
-
-### Justify-content
 ![justify-content: center](https://highload.tech/wp-content/uploads/2021/10/image12.png)
-
-Свойство justify-content: center центрирует блоки
-Нетрудно догадаться из названия параметра, что при таком значении свойства
-
-justify-content
-`justify-content` блоки во flex-контейнере выравниваются по центру (центрируются).
-
-flex-start
 ![justify-content: flex-start](https://highload.tech/wp-content/uploads/2021/10/image18.png)
-Свойство justify-content: flex-start выстраивает элементы относительно начала главной оси
-Это значение по умолчанию, при котором элементы контейнера выстраиваются относительно начала главной оси.
-
-
-flex-end
 ![justify-content: flex-end](https://highload.tech/wp-content/uploads/2021/10/image6.png)
-Свойство justify-content: flex-end сдвинет элементы к концу главной базовой линии контейнера
-
-space-between
 ![justify-content: space-between](https://highload.tech/wp-content/uploads/2021/10/image19.png)
-Свойство justify-content: space-between расставит блоки на одинаковом расстоянии
-
-space-around
 ![justify-content: space-around](https://highload.tech/wp-content/uploads/2021/10/image25.png)
-Свойство justify-content: space-around создаст вокруг элементов одинаковые интервалы
-
-
-justify-content
-space-around
-`space-around` вокруг элементов образовались одинаковые интервалы. Но тут надо помнить, что у первого элемента левый интервал будет равен **х**, а правый — **2x**. Это получилось, поскольку у следующего за ним элемента также будет интервал **x** — и поэтому они складываются. То же правило применяется к последнему элементу.
-
-## Align-items
-Это свойство используется для выравнивания flex-элементов по вертикали и имеет четыре основных значения.
-Перед тем как продолжить рассматривать параметры
-`align-items`, необходимо добавить высоты нашему контейнеру, чтобы увидеть эффект от применения значений. Рассмотрим их:
-
-center
 ![align-items: center центрирует элементы](https://highload.tech/wp-content/uploads/2021/10/image21.png)
-Свойство align-items: center центрирует элементы
-Это значение центрирует наши элементы, как показано на рисунке выше.
-
-_2_
-
-flex-start
 ![align-items: flex-start](https://highload.tech/wp-content/uploads/2021/10/image5.png)
-Свойство align-items: flex-start выстраивает блоки относительно начала поперечной оси
-В этом случае блоки выстроились относительно начала поперечной оси.
-
-flex-end
 ![align-items: flex-end](https://highload.tech/wp-content/uploads/2021/10/image16.png)
-Свойство align-items: flex-end выстраивает блоки в конце поперечной оси
-
-stretch
 ![align-items: stretch](https://highload.tech/wp-content/uploads/2021/10/image23.png)
-Свойство align-items: stretch растягивает блоки на всю высоту контейнера
-Этот параметр растягивает блоки на высоту контейнера.
-
-baseline
 ![align-items: baseline](https://highload.tech/wp-content/uploads/2021/10/image26.png)
-Свойство align-items: baseline влияет на размер шрифта flex-элементов
-Это свойство влияет только на изменение размера шрифта flex-элементов, как показано изображении выше.
-
-## Align-content
-Принцип действия свойства 
-
-align-content
-
-space-around
 ![align-content: space-around](https://highload.tech/wp-content/uploads/2021/10/image20.png)
-Свойство align-content: space-around равномерно распределяет элементы
-
-space-between
 ![align-content: space-between](https://highload.tech/wp-content/uploads/2021/10/image13.png)
-
-Свойство align-content: space-between распределяет элементы так, что первый находится на одном уровне с началом, а последний — с концом
-center
 ![align-content: center](https://highload.tech/wp-content/uploads/2021/10/image15.png)
-Свойство align-content: center располагает элементы вокруг центра
-
-flex-start
 ![align-content: flex-start](https://highload.tech/wp-content/uploads/2021/10/image22.png)
-Свойство align-content: flex-start располагает элементы в начале
-
-flex-end
 ![align-content: flex-end](https://highload.tech/wp-content/uploads/2021/10/image9.png)
-
-Свойство align-content: flex-end располагает элементы в конце
-## Свойства flex-элементов
-
-Все вышеперечисленные свойства применяются к flex-контейнеру и не влияют напрямую на элементы (только косвенно). Поэтому давайте рассмотрим несколько свойств
-flexbox
-
-order
 ![Свойство order](https://highload.tech/wp-content/uploads/2021/10/image7.png)
-
-Свойство order упорядочивает элементы от более низкого к более высокому порядку
-
-order
-
-
 ![flex-grow](https://highload.tech/wp-content/uploads/2021/10/image10.png)
-Свойство flex-grow расширяет один блок относительно другого, а flex-shrink — сжимает
-Все элементы по правилам Flexbox расширяются в одинаковом соотношении и занимают одинаковое пространство в контейнере (равную ширину). Мы изменили это пространство при помощи свойства
-
 ![flex-basis задает размер определнного блока](https://highload.tech/wp-content/uploads/2021/10/image3.png)
-
-Свойство flex-basis задает размер определенного блока
-Это значение задает размер для отдельно взятого flex-блока.
-
 ![align-self](https://highload.tech/wp-content/uploads/2021/10/image8.png)
-Свойство align-self выравнивает элемент внутри контейнера
-Мы используем это свойство, чтобы выровнять flex-элемент внутри контейнера. Но для этого необходимо указать высоту flex-контейнера для того, чтобы увидеть эффект. Ему можно присвоить значения:
-
-flex-start
 
