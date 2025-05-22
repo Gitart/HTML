@@ -6,14 +6,10 @@
 
 CSS уже давно стал основой интерфейсной веб-разработки. И теперь он — более сложный и эффективным инструмент, чем когда-либо. Но [достижение отзывчивости](https://highload.tech/adaptivnaya-verstka-kak-nauchit-sajt-prisposablivatsya-k-lyubomu-devajsu/) на веб-странице при работе с несколькими элементами и использовании различных устройств всегда было проблемой. Одно из наиболее популярных ее решений — технология **CSS Flexbox**, позволяющая разработать довольно сложный дизайн веб-сайта и идеально расположить его элементы.
 
-Creators - Агенція з міжнародного PR для технологічних та B2B компаній
 
 ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20116%2049'%3E%3C/svg%3E)
-
 ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2033'%3E%3C/svg%3E) PR для компаній та їх лідерів
-
 ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2033'%3E%3C/svg%3E) Організація інтерв’ю в медіа, подкастах, виступи на конференціях
-
 ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2033%2033'%3E%3C/svg%3E) Європа, Азія, Америка
 
 [Дізнатись деталі ![](data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2013%2014'%3E%3C/svg%3E)](https://the-creators.agency/ua/?utm_source=vidget\&utm_medium=Highload)
