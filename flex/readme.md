@@ -1,5 +1,4 @@
-# Основы CSS-верстки: как с помощью Flexbox компоновать элементы на странице
-
+# Flexbox
 
 [![](/wp-content/themes/supermc/images/svg/soc-facebook-red.svg)](# "Поділитися у Facebook") [![](/wp-content/themes/supermc/images/svg/soc-twitter-red.svg)](# "Поділитися в Twitter") [![](/wp-content/themes/supermc/images/svg/soc-telegram-red.svg)](<https://t.me/share/url?url=https://highload.tech/flexbox/\&text=Основы CSS-верстки: как с помощью Flexbox компоновать элементы на странице> "Поділитися в Telegram")
 
