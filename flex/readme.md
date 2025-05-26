@@ -49,7 +49,7 @@ justify-content: center;
 
 .flex-container{ display: flex; background-color: #f7941d; margin: 20px; justify-content: center; } .flex-container > div{ color: white; padding: 40px; background-color: #c597ec; margin: 10px; border: 1px solid grey; }
 
-```
+```css
 .flex-container{
   display: flex;
   background-color: #f7941d;
