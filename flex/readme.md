@@ -22,7 +22,7 @@ CSS Flexbox помогает разработать сложный дизайн 
 
 
 
-```
+```css
 <div class = "flex-container">
  <div> flex-item1 </div>
  <div> flex-item2 </div>
